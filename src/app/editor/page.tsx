@@ -2,11 +2,24 @@
 
 import { useState, useEffect } from 'react';
 import { getAllRotations } from '@/data/rotations';
-import { Rotation, Arrangement, CourtPosition } from '@/lib/rotations/types';
+import { Rotation, Arrangement, CourtPosition, Color } from '@/lib/rotations/types';
 import { CourtDiagram } from '@/components/court/CourtDiagram';
 import { PlayerToken } from '@/components/court/PlayerToken';
 import { Button } from '@/components/ui/Button';
 import { getZoneFromCoordinates } from '@/lib/utils/coordinates';
+
+// Helper function to convert Color enum value to enum name
+const getColorEnumName = (colorValue: Color): string => {
+  const colorMap: Record<string, string> = {
+    [Color.CYAN]: 'Color.CYAN',
+    [Color.GREEN]: 'Color.GREEN',
+    [Color.BLUE]: 'Color.BLUE',
+    [Color.YELLOW]: 'Color.YELLOW',
+    [Color.RED]: 'Color.RED',
+    [Color.ORANGE]: 'Color.ORANGE',
+  };
+  return colorMap[colorValue] || colorValue;
+};
 
 export default function RotationEditorPage() {
   const rotations = getAllRotations();
@@ -56,7 +69,7 @@ export default function RotationEditorPage() {
     const code = sortedPlayers
       .map((player) => {
         const pos = playerPositions.get(player.id) || player.coordinates;
-        return `          { id: '${player.id}', position: Position.${player.position.toUpperCase().replace(' ', '_')}, color: '${player.color}', coordinates: { x: ${pos.x}, y: ${pos.y}, zone: Zone.${pos.zone} } }`;
+        return `          { id: '${player.id}', position: Position.${player.position.toUpperCase().replace(' ', '_')}, color: ${getColorEnumName(player.color)}, coordinates: { x: ${pos.x}, y: ${pos.y}, zone: Zone.${pos.zone} } }`;
       })
       .join(',\n');
 

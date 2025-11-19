@@ -1,4 +1,16 @@
 /**
+ * Player colors for visual distinction
+ */
+export enum Color {
+  CYAN = '#22D3EE',
+  GREEN = '#4ADE80',
+  BLUE = '#60A5FA',
+  YELLOW = '#FCD34D',
+  RED = '#F87171',
+  ORANGE = '#FB923C',
+}
+
+/**
  * Court zones using Roman numeral notation
  */
 export enum Zone {
@@ -55,7 +67,7 @@ export interface CourtPosition {
 export interface Player {
   id: string; // Unique identifier (e.g., "S1", "O1", "M1")
   position: Position; // Player's role
-  color: string; // Hex color for visual distinction
+  color: Color; // Color for visual distinction
   coordinates: CourtPosition; // Exact position on court (includes zone)
 }
 
@@ -65,7 +77,7 @@ export interface Player {
 export interface PositionInfo {
   position: Position;
   abbreviation: string; // "S", "O", "M", "RS", "L"
-  color: string;
+  color: Color;
   description: string;
   responsibilities: {
     [Arrangement.HOME]: string[];

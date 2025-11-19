@@ -1,10 +1,10 @@
-import { Position, Arrangement, PositionInfo } from '@/lib/rotations/types';
+import { Position, Arrangement, PositionInfo, Color } from '@/lib/rotations/types';
 
 export const positionInfo: PositionInfo[] = [
   {
     position: Position.SETTER,
     abbreviation: 'S',
-    color: '#22D3EE',
+    color: Color.CYAN,
     description: 'Orchestrates the offense by setting the ball to hitters',
     responsibilities: {
       [Arrangement.HOME]: [
@@ -30,7 +30,7 @@ export const positionInfo: PositionInfo[] = [
   {
     position: Position.OUTSIDE,
     abbreviation: 'O',
-    color: '#4ADE80',
+    color: Color.GREEN,
     description: 'Primary attacker from the left side and key passer',
     responsibilities: {
       [Arrangement.HOME]: ['Stand in designated service order zone'],
@@ -52,7 +52,7 @@ export const positionInfo: PositionInfo[] = [
   {
     position: Position.MIDDLE,
     abbreviation: 'M',
-    color: '#60A5FA',
+    color: Color.BLUE,
     description: 'Quick attacker and primary blocker in the middle',
     responsibilities: {
       [Arrangement.HOME]: ['Stand in designated service order zone'],
@@ -73,7 +73,7 @@ export const positionInfo: PositionInfo[] = [
   {
     position: Position.RIGHT_SIDE,
     abbreviation: 'RS',
-    color: '#FCD34D',
+    color: Color.YELLOW,
     description: 'Right side attacker and blocker, often sets when setter digs',
     responsibilities: {
       [Arrangement.HOME]: ['Stand in designated service order zone'],
