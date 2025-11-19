@@ -48,6 +48,14 @@ export function NavBar() {
             >
               Glossary
             </Link>
+            <Link
+              href="/editor"
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors border border-white/30 ${
+                isActive('/editor') ? 'bg-blue-700' : 'hover:bg-blue-500'
+              }`}
+            >
+              Editor
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -104,6 +112,13 @@ export function NavBar() {
               onClick={() => setIsMenuOpen(false)}
             >
               Glossary
+            </Link>
+            <Link
+              href="/editor"
+              className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-500 transition-colors border border-white/30"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Editor
             </Link>
           </div>
         )}
