@@ -10,7 +10,7 @@ interface CourtDiagramProps {
 
 export function CourtDiagram({ children, showZoneLabels = true, className = '' }: CourtDiagramProps) {
   return (
-    <div className={`relative w-full aspect-[2/3] bg-gradient-to-b from-orange-50 to-orange-100 border-4 border-gray-800 rounded-lg ${className}`}>
+    <div className={`relative w-full aspect-square bg-gradient-to-b from-orange-50 to-orange-100 border-4 border-gray-800 rounded-lg ${className}`}>
       {/* Net line */}
       <div className="absolute top-1/2 left-0 right-0 h-1 bg-gray-800 transform -translate-y-1/2" />
 
