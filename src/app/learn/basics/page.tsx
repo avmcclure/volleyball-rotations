@@ -32,7 +32,7 @@ export default function BasicsPage() {
         </CardHeader>
         <CardContent>
           <div className="mb-4">
-            <CourtDiagram showZoneLabels={true} className="max-w-md mx-auto" />
+            <CourtDiagram className="max-w-md mx-auto" />
           </div>
           <ul className="space-y-2 text-gray-700">
             <li>
