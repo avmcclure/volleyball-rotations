@@ -2,10 +2,20 @@ import { Player, Position, CourtPosition, Color } from './types';
 
 /**
  * Factory functions for creating Player objects with consistent id, position, and color.
- * These functions take coordinates and automatically assign the correct id, position, and color.
+ * Each function takes coordinates and automatically assigns the correct id, position, and color.
  */
 
-export function createSetter(coordinates: CourtPosition): Player {
+// Setter helpers
+export function createS(coordinates: CourtPosition): Player {
+  return {
+    id: 'S',
+    position: Position.SETTER,
+    color: Color.CYAN,
+    coordinates,
+  };
+}
+
+export function createS1(coordinates: CourtPosition): Player {
   return {
     id: 'S1',
     position: Position.SETTER,
@@ -14,7 +24,17 @@ export function createSetter(coordinates: CourtPosition): Player {
   };
 }
 
-export function createRightSide(coordinates: CourtPosition): Player {
+// Right Side helpers
+export function createRS(coordinates: CourtPosition): Player {
+  return {
+    id: 'RS',
+    position: Position.RIGHT_SIDE,
+    color: Color.YELLOW,
+    coordinates,
+  };
+}
+
+export function createRS1(coordinates: CourtPosition): Player {
   return {
     id: 'RS1',
     position: Position.RIGHT_SIDE,
@@ -23,7 +43,8 @@ export function createRightSide(coordinates: CourtPosition): Player {
   };
 }
 
-export function createMiddle1(coordinates: CourtPosition): Player {
+// Middle helpers
+export function createM1(coordinates: CourtPosition): Player {
   return {
     id: 'M1',
     position: Position.MIDDLE,
@@ -32,7 +53,7 @@ export function createMiddle1(coordinates: CourtPosition): Player {
   };
 }
 
-export function createMiddle2(coordinates: CourtPosition): Player {
+export function createM2(coordinates: CourtPosition): Player {
   return {
     id: 'M2',
     position: Position.MIDDLE,
@@ -41,7 +62,8 @@ export function createMiddle2(coordinates: CourtPosition): Player {
   };
 }
 
-export function createOutside1(coordinates: CourtPosition): Player {
+// Outside helpers
+export function createO1(coordinates: CourtPosition): Player {
   return {
     id: 'O1',
     position: Position.OUTSIDE,
@@ -50,7 +72,7 @@ export function createOutside1(coordinates: CourtPosition): Player {
   };
 }
 
-export function createOutside2(coordinates: CourtPosition): Player {
+export function createO2(coordinates: CourtPosition): Player {
   return {
     id: 'O2',
     position: Position.OUTSIDE,
