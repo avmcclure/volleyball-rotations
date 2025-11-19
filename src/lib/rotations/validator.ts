@@ -5,13 +5,15 @@ import {
   ValidationResult,
   Player,
   PracticeSession,
+  Zone,
+  PlayerId,
 } from './types';
 
 /**
  * Validates if a player placement is correct
  */
 export function validatePlayerPlacement(
-  playerId: string,
+  playerId: PlayerId,
   actualPosition: CourtPosition,
   correctRotation: Rotation,
   arrangement: Arrangement
@@ -20,12 +22,17 @@ export function validatePlayerPlacement(
     (p) => p.id === playerId
   );
 
-  if (!correctPlayer) {
+  // Get the zone for this player from the rotation's playerZones mapping
+  const playerZone = Object.entries(correctRotation.playerZones).find(
+    ([_, id]) => id === playerId
+  )?.[0] as Zone | undefined;
+
+  if (!correctPlayer || !playerZone) {
     return {
       playerId,
       isCorrect: false,
-      correctZone: actualPosition.zone,
-      actualZone: actualPosition.zone,
+      correctZone: (playerZone || actualPosition.zone || Zone.I) as Zone,
+      actualZone: (actualPosition.zone || Zone.I) as Zone,
       message: 'Player not found in rotation',
     };
   }
@@ -39,9 +46,9 @@ export function validatePlayerPlacement(
   return {
     playerId,
     isCorrect,
-    correctZone: correctPlayer.coordinates.zone,
-    actualZone: actualPosition.zone,
-    message: isCorrect ? 'Correct!' : `Should be in ${correctPlayer.coordinates.zone}`,
+    correctZone: playerZone,
+    actualZone: (actualPosition.zone || playerZone) as Zone,
+    message: isCorrect ? 'Correct!' : `Should be in ${playerZone}`,
   };
 }
 
@@ -120,7 +127,7 @@ export function findClosestPosition(
 
   for (const player of players) {
     const distance = calculateDistance(
-      { x: clickPosition.x, y: clickPosition.y, zone: player.coordinates.zone },
+      { x: clickPosition.x, y: clickPosition.y },
       player.coordinates
     );
 

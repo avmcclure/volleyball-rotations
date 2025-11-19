@@ -1,11 +1,11 @@
 'use client';
 
 import React from 'react';
-import { Player } from '@/lib/rotations/types';
+import { Player, PlayerId } from '@/lib/rotations/types';
 
 interface PlayerBankProps {
   availablePlayers: Player[];
-  onDragStart: (playerId: string) => void;
+  onDragStart: (playerId: PlayerId) => void;
 }
 
 export function PlayerBank({ availablePlayers, onDragStart }: PlayerBankProps) {

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getRotation } from '@/data/rotations';
-import { Arrangement, CourtPosition, ValidationResult } from '@/lib/rotations/types';
+import { Arrangement, CourtPosition, PlayerId, ValidationResult } from '@/lib/rotations/types';
 import { DragDropCourt } from '@/components/practice/DragDropCourt';
 import { PlayerBank } from '@/components/practice/PlayerBank';
 import { FeedbackIndicator } from '@/components/practice/FeedbackIndicator';
@@ -21,11 +21,11 @@ export default function PracticeRotationClient({ rotationId }: PracticeRotationC
   const rotation = getRotation(rotationId);
 
   const [selectedArrangement, setSelectedArrangement] = useState<Arrangement>(Arrangement.HOME);
-  const [placedPlayers, setPlacedPlayers] = useState<Map<string, CourtPosition>>(new Map());
+  const [placedPlayers, setPlacedPlayers] = useState<Map<PlayerId, CourtPosition>>(new Map());
   const [validationResults, setValidationResults] = useState<ValidationResult[]>([]);
   const [isChecked, setIsChecked] = useState(false);
   const [hintsUsed, setHintsUsed] = useState(0);
-  const [hintPlayerIds, setHintPlayerIds] = useState<Set<string>>(new Set());
+  const [hintPlayerIds, setHintPlayerIds] = useState<Set<PlayerId>>(new Set());
 
   if (!rotation) {
     notFound();
@@ -35,7 +35,7 @@ export default function PracticeRotationClient({ rotationId }: PracticeRotationC
   const placedPlayerIds = Array.from(placedPlayers.keys());
   const availablePlayers = allPlayers.filter((p) => !placedPlayerIds.includes(p.id));
 
-  const handlePlayerPlaced = (playerId: string, position: CourtPosition) => {
+  const handlePlayerPlaced = (playerId: PlayerId, position: CourtPosition) => {
     const newPlacedPlayers = new Map(placedPlayers);
     newPlacedPlayers.set(playerId, position);
     setPlacedPlayers(newPlacedPlayers);
@@ -43,7 +43,7 @@ export default function PracticeRotationClient({ rotationId }: PracticeRotationC
     setValidationResults([]);
   };
 
-  const handleDragStart = (playerId: string) => {
+  const handleDragStart = (playerId: PlayerId) => {
     // Remove player from placed if they're being dragged again
     const newPlacedPlayers = new Map(placedPlayers);
     newPlacedPlayers.delete(playerId);
@@ -88,7 +88,7 @@ export default function PracticeRotationClient({ rotationId }: PracticeRotationC
   };
 
   const handleShowSolution = () => {
-    const newPlacedPlayers = new Map<string, CourtPosition>();
+    const newPlacedPlayers = new Map<PlayerId, CourtPosition>();
     allPlayers.forEach((player) => {
       newPlacedPlayers.set(player.id, player.coordinates);
     });

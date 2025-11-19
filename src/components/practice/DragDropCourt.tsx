@@ -6,6 +6,7 @@ import {
   Arrangement,
   Player,
   CourtPosition,
+  PlayerId,
   ValidationResult,
 } from '@/lib/rotations/types';
 import { CourtDiagram } from '../court/CourtDiagram';
@@ -16,10 +17,10 @@ import { getZoneFromCoordinates } from '@/lib/utils/coordinates';
 interface DragDropCourtProps {
   rotation: Rotation;
   arrangement: Arrangement;
-  placedPlayers: Map<string, CourtPosition>;
-  onPlayerPlaced: (playerId: string, position: CourtPosition) => void;
+  placedPlayers: Map<PlayerId, CourtPosition>;
+  onPlayerPlaced: (playerId: PlayerId, position: CourtPosition) => void;
   validationResults?: ValidationResult[];
-  hints?: Set<string>; // Player IDs that are hints
+  hints?: Set<PlayerId>; // Player IDs that are hints
 }
 
 export function DragDropCourt({
@@ -30,16 +31,18 @@ export function DragDropCourt({
   validationResults,
   hints,
 }: DragDropCourtProps) {
-  const [draggedPlayer, setDraggedPlayer] = useState<string | null>(null);
+  const [draggedPlayer, setDraggedPlayer] = useState<PlayerId | null>(null);
 
   const handleDrop = useCallback(
     (e: React.DragEvent<HTMLDivElement>) => {
       e.preventDefault();
 
       // Get player ID from dataTransfer (from PlayerBank) or state (from court)
-      const playerId = e.dataTransfer.getData('playerId') || draggedPlayer;
+      const playerIdStr = e.dataTransfer.getData('playerId') || draggedPlayer;
 
-      if (!playerId) return;
+      if (!playerIdStr) return;
+
+      const playerId = playerIdStr as PlayerId;
 
       const rect = e.currentTarget.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width) * 100;

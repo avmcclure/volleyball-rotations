@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Rotation, Arrangement } from '@/lib/rotations/types';
+import { Rotation, Arrangement, PlayerId } from '@/lib/rotations/types';
 import { CourtGrid } from '../court/CourtGrid';
 import { PlayerInfoModal } from './PlayerInfoModal';
 
@@ -37,10 +37,11 @@ export function RotationDisplay({ rotation }: RotationDisplayProps) {
         <p className="text-gray-600">{rotation.description}</p>
         <div className="mt-2 flex gap-4 text-sm text-gray-600">
           <span>
-            Server Zone: <strong>{rotation.serverZone}</strong>
-          </span>
-          <span>
-            Setter Zone: <strong>{rotation.setterZone}</strong>
+            Setter Zone: <strong>{
+              Object.entries(rotation.playerZones).find(
+                ([_, playerId]) => playerId === PlayerId.S || playerId === PlayerId.S1
+              )?.[0]
+            }</strong>
           </span>
         </div>
       </div>
@@ -53,6 +54,7 @@ export function RotationDisplay({ rotation }: RotationDisplayProps) {
           onClose={handleCloseModal}
           player={playerData || null}
           arrangement={selectedPlayer.arrangement}
+          rotation={rotation}
         />
       )}
     </div>

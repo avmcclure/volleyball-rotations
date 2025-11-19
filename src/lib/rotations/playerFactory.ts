@@ -1,4 +1,4 @@
-import { Player, Position, CourtPosition, Color } from './types';
+import { Player, PlayerId, Position, CourtPosition, Color } from './types';
 
 /**
  * Factory functions for creating Player objects with consistent id, position, and color.
@@ -8,7 +8,7 @@ import { Player, Position, CourtPosition, Color } from './types';
 // Setter helpers
 export function createS(coordinates: CourtPosition): Player {
   return {
-    id: 'S',
+    id: PlayerId.S,
     position: Position.SETTER,
     color: Color.CYAN,
     coordinates,
@@ -17,7 +17,7 @@ export function createS(coordinates: CourtPosition): Player {
 
 export function createS1(coordinates: CourtPosition): Player {
   return {
-    id: 'S1',
+    id: PlayerId.S1,
     position: Position.SETTER,
     color: Color.CYAN,
     coordinates,
@@ -27,7 +27,7 @@ export function createS1(coordinates: CourtPosition): Player {
 // Right Side helpers
 export function createRS(coordinates: CourtPosition): Player {
   return {
-    id: 'RS',
+    id: PlayerId.RS,
     position: Position.RIGHT_SIDE,
     color: Color.YELLOW,
     coordinates,
@@ -36,7 +36,7 @@ export function createRS(coordinates: CourtPosition): Player {
 
 export function createRS1(coordinates: CourtPosition): Player {
   return {
-    id: 'RS1',
+    id: PlayerId.RS1,
     position: Position.RIGHT_SIDE,
     color: Color.YELLOW,
     coordinates,
@@ -46,7 +46,7 @@ export function createRS1(coordinates: CourtPosition): Player {
 // Middle helpers
 export function createM1(coordinates: CourtPosition): Player {
   return {
-    id: 'M1',
+    id: PlayerId.M1,
     position: Position.MIDDLE,
     color: Color.BLUE,
     coordinates,
@@ -55,7 +55,7 @@ export function createM1(coordinates: CourtPosition): Player {
 
 export function createM2(coordinates: CourtPosition): Player {
   return {
-    id: 'M2',
+    id: PlayerId.M2,
     position: Position.MIDDLE,
     color: Color.ORANGE,
     coordinates,
@@ -65,7 +65,7 @@ export function createM2(coordinates: CourtPosition): Player {
 // Outside helpers
 export function createO1(coordinates: CourtPosition): Player {
   return {
-    id: 'O1',
+    id: PlayerId.O1,
     position: Position.OUTSIDE,
     color: Color.GREEN,
     coordinates,
@@ -74,7 +74,7 @@ export function createO1(coordinates: CourtPosition): Player {
 
 export function createO2(coordinates: CourtPosition): Player {
   return {
-    id: 'O2',
+    id: PlayerId.O2,
     position: Position.OUTSIDE,
     color: Color.RED,
     coordinates,
@@ -85,7 +85,7 @@ export function createO2(coordinates: CourtPosition): Player {
  * Generic player creation function that takes all parameters
  */
 export function createPlayer(
-  id: string,
+  id: PlayerId,
   position: Position,
   color: Color,
   coordinates: CourtPosition

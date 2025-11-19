@@ -34,6 +34,20 @@ export enum Position {
 }
 
 /**
+ * Player identifiers
+ */
+export enum PlayerId {
+  S = 'S',
+  S1 = 'S1',
+  RS = 'RS',
+  RS1 = 'RS1',
+  M1 = 'M1',
+  M2 = 'M2',
+  O1 = 'O1',
+  O2 = 'O2',
+}
+
+/**
  * The 4 arrangements in a rotation
  */
 export enum Arrangement {
@@ -58,14 +72,14 @@ export enum RotationSystem {
 export interface CourtPosition {
   x: number; // Percentage from left (0-100)
   y: number; // Percentage from top (0-100)
-  zone: Zone;
+  zone?: Zone; // Optional: can be inferred from rotation-level playerZones
 }
 
 /**
  * Individual player instance in an arrangement
  */
 export interface Player {
-  id: string; // Unique identifier (e.g., "S1", "O1", "M1")
+  id: PlayerId; // Unique identifier (e.g., PlayerId.S, PlayerId.O1, PlayerId.M1)
   position: Position; // Player's role
   color: Color; // Color for visual distinction
   coordinates: CourtPosition; // Exact position on court (includes zone)
@@ -111,10 +125,7 @@ export interface Rotation {
     [Arrangement.SERVE]: ArrangementConfig;
     [Arrangement.RECEIVE]: ArrangementConfig;
   };
-  serverZone: Zone; // Which zone is serving
-  setterZone: Zone; // Which zone setter is in (for 5-1)
-  frontRow: Position[]; // Which positions are in front row
-  backRow: Position[]; // Which positions are in back row
+  playerZones: Record<Zone, PlayerId>; // Player ID assigned to each zone
 }
 
 /**
@@ -134,7 +145,7 @@ export interface GlossaryTerm {
 export interface PracticeSession {
   rotationId: number;
   arrangement: Arrangement;
-  playerPlacements: Map<string, CourtPosition>; // player ID -> position
+  playerPlacements: Map<PlayerId, CourtPosition>; // player ID -> position
   isComplete: boolean;
   correctCount: number;
   hintsUsed: number;
@@ -144,7 +155,7 @@ export interface PracticeSession {
  * Validation result for player placement
  */
 export interface ValidationResult {
-  playerId: string;
+  playerId: PlayerId;
   isCorrect: boolean;
   correctZone: Zone;
   actualZone: Zone;

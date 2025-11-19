@@ -57,10 +57,11 @@ export default function LearnPage() {
                   <p className="text-gray-600 mb-4">{rotation.description}</p>
                   <div className="space-y-1 text-sm text-gray-600">
                     <p>
-                      <strong>Server:</strong> Zone {rotation.serverZone}
-                    </p>
-                    <p>
-                      <strong>Setter:</strong> Zone {rotation.setterZone}
+                      <strong>Setter:</strong> Zone {
+                        Object.entries(rotation.playerZones).find(
+                          ([_, playerId]) => playerId === 'S' || playerId === 'S1'
+                        )?.[0]
+                      }
                     </p>
                   </div>
                 </CardContent>

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Modal } from '../ui/Modal';
-import { Player, Arrangement } from '@/lib/rotations/types';
+import { Player, Arrangement, Rotation } from '@/lib/rotations/types';
 import { getPositionInfo } from '@/data/positions';
 
 interface PlayerInfoModalProps {
@@ -10,9 +10,10 @@ interface PlayerInfoModalProps {
   onClose: () => void;
   player: Player | null;
   arrangement: Arrangement;
+  rotation: Rotation;
 }
 
-export function PlayerInfoModal({ isOpen, onClose, player, arrangement }: PlayerInfoModalProps) {
+export function PlayerInfoModal({ isOpen, onClose, player, arrangement, rotation }: PlayerInfoModalProps) {
   if (!player) return null;
 
   const positionInfo = getPositionInfo(player.position);
@@ -20,6 +21,11 @@ export function PlayerInfoModal({ isOpen, onClose, player, arrangement }: Player
   if (!positionInfo) return null;
 
   const responsibilities = positionInfo.responsibilities[arrangement];
+
+  // Get the zone for this player from the rotation's playerZones mapping
+  const playerZone = Object.entries(rotation.playerZones).find(
+    ([_, id]) => id === player.id
+  )?.[0];
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} title={player.position}>
@@ -33,7 +39,7 @@ export function PlayerInfoModal({ isOpen, onClose, player, arrangement }: Player
             {positionInfo.abbreviation}
           </div>
           <div>
-            <p className="text-sm text-gray-600">Zone {player.coordinates.zone}</p>
+            <p className="text-sm text-gray-600">Zone {playerZone || 'Unknown'}</p>
             <p className="text-sm text-gray-600">{arrangement} Arrangement</p>
           </div>
         </div>

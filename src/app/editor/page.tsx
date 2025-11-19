@@ -2,23 +2,23 @@
 
 import { useState, useEffect } from 'react';
 import { getAllRotations } from '@/data/rotations';
-import { Rotation, Arrangement, CourtPosition } from '@/lib/rotations/types';
+import { Rotation, Arrangement, CourtPosition, PlayerId } from '@/lib/rotations/types';
 import { CourtDiagram } from '@/components/court/CourtDiagram';
 import { PlayerToken } from '@/components/court/PlayerToken';
 import { Button } from '@/components/ui/Button';
 import { getZoneFromCoordinates } from '@/lib/utils/coordinates';
 
 // Helper function to get factory function name for a player ID
-const getFactoryFunctionName = (playerId: string): string => {
-  const factoryMap: Record<string, string> = {
-    S: 'createS',
-    S1: 'createS1',
-    RS: 'createRS',
-    RS1: 'createRS1',
-    M1: 'createM1',
-    M2: 'createM2',
-    O1: 'createO1',
-    O2: 'createO2',
+const getFactoryFunctionName = (playerId: PlayerId): string => {
+  const factoryMap: Record<PlayerId, string> = {
+    [PlayerId.S]: 'createS',
+    [PlayerId.S1]: 'createS1',
+    [PlayerId.RS]: 'createRS',
+    [PlayerId.RS1]: 'createRS1',
+    [PlayerId.M1]: 'createM1',
+    [PlayerId.M2]: 'createM2',
+    [PlayerId.O1]: 'createO1',
+    [PlayerId.O2]: 'createO2',
   };
   return factoryMap[playerId] || 'createPlayer';
 };
@@ -27,13 +27,13 @@ export default function RotationEditorPage() {
   const rotations = getAllRotations();
   const [selectedRotation, setSelectedRotation] = useState<Rotation>(rotations[0]);
   const [selectedArrangement, setSelectedArrangement] = useState<Arrangement>(Arrangement.HOME);
-  const [playerPositions, setPlayerPositions] = useState<Map<string, CourtPosition>>(new Map());
-  const [draggedPlayer, setDraggedPlayer] = useState<string | null>(null);
+  const [playerPositions, setPlayerPositions] = useState<Map<PlayerId, CourtPosition>>(new Map());
+  const [draggedPlayer, setDraggedPlayer] = useState<PlayerId | null>(null);
 
   // Initialize player positions when rotation or arrangement changes
   useEffect(() => {
     const players = selectedRotation.arrangements[selectedArrangement].players;
-    const positions = new Map<string, CourtPosition>();
+    const positions = new Map<PlayerId, CourtPosition>();
     players.forEach((player) => {
       positions.set(player.id, player.coordinates);
     });
@@ -63,16 +63,17 @@ export default function RotationEditorPage() {
     const players = selectedRotation.arrangements[selectedArrangement].players;
     const sortedPlayers = [...players].sort((a, b) => {
       const zoneOrder = { I: 1, II: 2, III: 3, IV: 4, V: 5, VI: 6 };
-      const posA = playerPositions.get(a.id) || a.coordinates;
-      const posB = playerPositions.get(b.id) || b.coordinates;
-      return zoneOrder[posA.zone] - zoneOrder[posB.zone];
+      // Get zone from rotation's playerZones mapping
+      const zoneA = Object.entries(selectedRotation.playerZones).find(([_, playerId]) => playerId === a.id)?.[0];
+      const zoneB = Object.entries(selectedRotation.playerZones).find(([_, playerId]) => playerId === b.id)?.[0];
+      return (zoneOrder[zoneA as keyof typeof zoneOrder] || 0) - (zoneOrder[zoneB as keyof typeof zoneOrder] || 0);
     });
 
     const code = sortedPlayers
       .map((player) => {
         const pos = playerPositions.get(player.id) || player.coordinates;
         const factoryFn = getFactoryFunctionName(player.id);
-        return `          ${factoryFn}({ x: ${pos.x}, y: ${pos.y}, zone: Zone.${pos.zone} })`;
+        return `          ${factoryFn}({ x: ${pos.x}, y: ${pos.y} })`;
       })
       .join(',\n');
 
@@ -109,11 +110,16 @@ export default function RotationEditorPage() {
                 }}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               >
-                {rotations.map((rotation) => (
-                  <option key={rotation.id} value={rotation.id}>
-                    {rotation.name} - Setter in Zone {rotation.setterZone}
-                  </option>
-                ))}
+                {rotations.map((rotation) => {
+                  const setterZone = Object.entries(rotation.playerZones).find(
+                    ([_, playerId]) => playerId === PlayerId.S || playerId === PlayerId.S1
+                  )?.[0];
+                  return (
+                    <option key={rotation.id} value={rotation.id}>
+                      {rotation.name} - Setter in Zone {setterZone}
+                    </option>
+                  );
+                })}
               </select>
             </div>
 
