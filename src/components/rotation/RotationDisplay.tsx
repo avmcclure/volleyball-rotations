@@ -36,8 +36,12 @@ export function RotationDisplay({ rotation }: RotationDisplayProps) {
         <h1 className="text-3xl font-bold text-gray-900 mb-2">{rotation.name}</h1>
         <p className="text-gray-600">{rotation.description}</p>
         <div className="mt-2 flex gap-4 text-sm text-gray-600">
-          <span>Server Zone: <strong>{rotation.serverZone}</strong></span>
-          <span>Setter Zone: <strong>{rotation.setterZone}</strong></span>
+          <span>
+            Server Zone: <strong>{rotation.serverZone}</strong>
+          </span>
+          <span>
+            Setter Zone: <strong>{rotation.setterZone}</strong>
+          </span>
         </div>
       </div>
 

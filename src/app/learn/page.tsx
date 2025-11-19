@@ -10,8 +10,8 @@ export default function LearnPage() {
       <div className="mb-8">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">Learn Rotations</h1>
         <p className="text-lg text-gray-600">
-          Explore all 6 rotations of the 5-1 system. Click on any rotation to see detailed
-          diagrams and explanations.
+          Explore all 6 rotations of the 5-1 system. Click on any rotation to see detailed diagrams
+          and explanations.
         </p>
       </div>
 
@@ -20,9 +20,7 @@ export default function LearnPage() {
         <Link href="/learn/basics">
           <Card className="h-full">
             <CardContent className="py-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                Basics & Terminology
-              </h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Basics & Terminology</h3>
               <p className="text-gray-600">
                 Start here to learn fundamental concepts, zones, and arrangements.
               </p>
@@ -51,12 +49,8 @@ export default function LearnPage() {
               <Card className="h-full hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex items-center justify-between">
-                    <h3 className="text-xl font-bold text-gray-900">
-                      {rotation.name}
-                    </h3>
-                    <span className="text-sm text-gray-500">
-                      {rotation.system}
-                    </span>
+                    <h3 className="text-xl font-bold text-gray-900">{rotation.name}</h3>
+                    <span className="text-sm text-gray-500">{rotation.system}</span>
                   </div>
                 </CardHeader>
                 <CardContent>

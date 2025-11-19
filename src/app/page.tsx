@@ -7,12 +7,10 @@ export default function HomePage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Hero Section */}
       <div className="text-center mb-16">
-        <h1 className="text-5xl font-bold text-gray-900 mb-4">
-          Master Volleyball Rotations
-        </h1>
+        <h1 className="text-5xl font-bold text-gray-900 mb-4">Master Volleyball Rotations</h1>
         <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-          Learn the 5-1 rotation system with interactive walkthroughs and practice quizzes.
-          Perfect for beginners learning court positioning and movement.
+          Learn the 5-1 rotation system with interactive walkthroughs and practice quizzes. Perfect
+          for beginners learning court positioning and movement.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -48,11 +46,10 @@ export default function HomePage() {
                 />
               </svg>
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
-              Guided Walkthroughs
-            </h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Guided Walkthroughs</h3>
             <p className="text-gray-600">
-              Learn all 6 rotations with detailed explanations and visual diagrams showing all 4 arrangements.
+              Learn all 6 rotations with detailed explanations and visual diagrams showing all 4
+              arrangements.
             </p>
           </CardContent>
         </Card>
@@ -74,9 +71,7 @@ export default function HomePage() {
                 />
               </svg>
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
-              Interactive Practice
-            </h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Interactive Practice</h3>
             <p className="text-gray-600">
               Drag and drop players to practice positioning with instant feedback on correctness.
             </p>
@@ -100,11 +95,10 @@ export default function HomePage() {
                 />
               </svg>
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
-              Complete Glossary
-            </h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Complete Glossary</h3>
             <p className="text-gray-600">
-              Reference all volleyball terms, zones, and concepts with clear definitions and examples.
+              Reference all volleyball terms, zones, and concepts with clear definitions and
+              examples.
             </p>
           </CardContent>
         </Card>
@@ -119,7 +113,8 @@ export default function HomePage() {
               1
             </span>
             <span>
-              <strong>Learn the Basics:</strong> Start with terminology and understand zones, positions, and arrangements.
+              <strong>Learn the Basics:</strong> Start with terminology and understand zones,
+              positions, and arrangements.
             </span>
           </li>
           <li className="flex items-start gap-3">
@@ -127,7 +122,8 @@ export default function HomePage() {
               2
             </span>
             <span>
-              <strong>Study Rotations:</strong> Walk through each of the 6 rotations and see how players move.
+              <strong>Study Rotations:</strong> Walk through each of the 6 rotations and see how
+              players move.
             </span>
           </li>
           <li className="flex items-start gap-3">
@@ -135,7 +131,8 @@ export default function HomePage() {
               3
             </span>
             <span>
-              <strong>Practice:</strong> Test your knowledge with drag-and-drop quizzes and get instant feedback.
+              <strong>Practice:</strong> Test your knowledge with drag-and-drop quizzes and get
+              instant feedback.
             </span>
           </li>
         </ol>

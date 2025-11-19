@@ -1,4 +1,11 @@
-import { Rotation, Arrangement, CourtPosition, ValidationResult, Player, PracticeSession } from './types';
+import {
+  Rotation,
+  Arrangement,
+  CourtPosition,
+  ValidationResult,
+  Player,
+  PracticeSession,
+} from './types';
 
 /**
  * Validates if a player placement is correct
@@ -10,7 +17,7 @@ export function validatePlayerPlacement(
   arrangement: Arrangement
 ): ValidationResult {
   const correctPlayer = correctRotation.arrangements[arrangement].players.find(
-    p => p.id === playerId
+    (p) => p.id === playerId
   );
 
   if (!correctPlayer) {
@@ -19,7 +26,7 @@ export function validatePlayerPlacement(
       isCorrect: false,
       correctZone: actualPosition.zone,
       actualZone: actualPosition.zone,
-      message: 'Player not found in rotation'
+      message: 'Player not found in rotation',
     };
   }
 
@@ -34,7 +41,7 @@ export function validatePlayerPlacement(
     isCorrect,
     correctZone: correctPlayer.coordinates.zone,
     actualZone: actualPosition.zone,
-    message: isCorrect ? 'Correct!' : `Should be in ${correctPlayer.coordinates.zone}`
+    message: isCorrect ? 'Correct!' : `Should be in ${correctPlayer.coordinates.zone}`,
   };
 }
 
@@ -63,10 +70,7 @@ export function validateAllPlacements(
 /**
  * Gets a hint (reveals one correct position)
  */
-export function getHint(
-  session: PracticeSession,
-  rotation: Rotation
-): Player | null {
+export function getHint(session: PracticeSession, rotation: Rotation): Player | null {
   const arrangement = rotation.arrangements[session.arrangement];
   const placedPlayerIds = Array.from(session.playerPlacements.keys());
 

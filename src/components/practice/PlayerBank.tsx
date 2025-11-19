@@ -12,9 +12,7 @@ export function PlayerBank({ availablePlayers, onDragStart }: PlayerBankProps) {
   return (
     <div className="bg-white rounded-lg shadow-md p-4">
       <h3 className="text-lg font-semibold text-gray-900 mb-3">Available Players</h3>
-      <p className="text-sm text-gray-600 mb-4">
-        Drag players onto the court to position them
-      </p>
+      <p className="text-sm text-gray-600 mb-4">Drag players onto the court to position them</p>
 
       <div className="flex flex-wrap gap-3">
         {availablePlayers.map((player) => (

@@ -1,7 +1,13 @@
 'use client';
 
 import React, { useState, useCallback } from 'react';
-import { Rotation, Arrangement, Player, CourtPosition, ValidationResult } from '@/lib/rotations/types';
+import {
+  Rotation,
+  Arrangement,
+  Player,
+  CourtPosition,
+  ValidationResult,
+} from '@/lib/rotations/types';
 import { CourtDiagram } from '../court/CourtDiagram';
 import { PlayerToken } from '../court/PlayerToken';
 import { validatePlayerPlacement } from '@/lib/rotations/validator';
@@ -22,7 +28,7 @@ export function DragDropCourt({
   placedPlayers,
   onPlayerPlaced,
   validationResults,
-  hints
+  hints,
 }: DragDropCourtProps) {
   const [draggedPlayer, setDraggedPlayer] = useState<string | null>(null);
 
@@ -56,11 +62,7 @@ export function DragDropCourt({
   };
 
   return (
-    <div
-      className="relative"
-      onDrop={handleDrop}
-      onDragOver={handleDragOver}
-    >
+    <div className="relative" onDrop={handleDrop} onDragOver={handleDragOver}>
       <CourtDiagram>
         {Array.from(placedPlayers.entries()).map(([playerId, position]) => {
           const correctPlayer = rotation.arrangements[arrangement].players.find(
@@ -75,7 +77,7 @@ export function DragDropCourt({
           // Create a player object with the current position
           const playerWithPosition: Player = {
             ...correctPlayer,
-            coordinates: position
+            coordinates: position,
           };
 
           return (

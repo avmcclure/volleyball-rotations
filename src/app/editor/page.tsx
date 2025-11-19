@@ -19,7 +19,7 @@ export default function RotationEditorPage() {
   useEffect(() => {
     const players = selectedRotation.arrangements[selectedArrangement].players;
     const positions = new Map<string, CourtPosition>();
-    players.forEach(player => {
+    players.forEach((player) => {
       positions.set(player.id, player.coordinates);
     });
     setPlayerPositions(positions);
@@ -53,10 +53,12 @@ export default function RotationEditorPage() {
       return zoneOrder[posA.zone] - zoneOrder[posB.zone];
     });
 
-    const code = sortedPlayers.map(player => {
-      const pos = playerPositions.get(player.id) || player.coordinates;
-      return `          { id: '${player.id}', position: Position.${player.position.toUpperCase().replace(' ', '_')}, color: '${player.color}', coordinates: { x: ${pos.x}, y: ${pos.y}, zone: Zone.${pos.zone} } }`;
-    }).join(',\n');
+    const code = sortedPlayers
+      .map((player) => {
+        const pos = playerPositions.get(player.id) || player.coordinates;
+        return `          { id: '${player.id}', position: Position.${player.position.toUpperCase().replace(' ', '_')}, color: '${player.color}', coordinates: { x: ${pos.x}, y: ${pos.y}, zone: Zone.${pos.zone} } }`;
+      })
+      .join(',\n');
 
     return `        players: [\n${code}\n        ]`;
   };
@@ -73,7 +75,8 @@ export default function RotationEditorPage() {
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Rotation Configuration Editor</h1>
           <p className="text-gray-600">
-            Drag players to update positions, then copy the generated code to update your rotation data.
+            Drag players to update positions, then copy the generated code to update your rotation
+            data.
           </p>
         </div>
 
@@ -81,18 +84,16 @@ export default function RotationEditorPage() {
         <div className="bg-white rounded-lg shadow-md p-6 mb-6">
           <div className="grid md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Rotation
-              </label>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Rotation</label>
               <select
                 value={selectedRotation.id}
                 onChange={(e) => {
-                  const rotation = rotations.find(r => r.id === parseInt(e.target.value));
+                  const rotation = rotations.find((r) => r.id === parseInt(e.target.value));
                   if (rotation) setSelectedRotation(rotation);
                 }}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               >
-                {rotations.map(rotation => (
+                {rotations.map((rotation) => (
                   <option key={rotation.id} value={rotation.id}>
                     {rotation.name} - Setter in Zone {rotation.setterZone}
                   </option>
@@ -101,9 +102,7 @@ export default function RotationEditorPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Arrangement
-              </label>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Arrangement</label>
               <select
                 value={selectedArrangement}
                 onChange={(e) => setSelectedArrangement(e.target.value as Arrangement)}
@@ -126,13 +125,9 @@ export default function RotationEditorPage() {
               Drag players to reposition them. Coordinates update in real-time.
             </p>
 
-            <div
-              className="relative"
-              onDrop={handleDrop}
-              onDragOver={handleDragOver}
-            >
+            <div className="relative" onDrop={handleDrop} onDragOver={handleDragOver}>
               <CourtDiagram>
-                {selectedRotation.arrangements[selectedArrangement].players.map(player => {
+                {selectedRotation.arrangements[selectedArrangement].players.map((player) => {
                   const position = playerPositions.get(player.id) || player.coordinates;
                   const playerWithPosition = { ...player, coordinates: position };
 
@@ -160,7 +155,7 @@ export default function RotationEditorPage() {
             <div className="mt-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-3">Current Positions</h3>
               <div className="space-y-2 text-sm">
-                {selectedRotation.arrangements[selectedArrangement].players.map(player => {
+                {selectedRotation.arrangements[selectedArrangement].players.map((player) => {
                   const pos = playerPositions.get(player.id) || player.coordinates;
                   return (
                     <div key={player.id} className="flex items-center gap-3">
@@ -205,7 +200,10 @@ export default function RotationEditorPage() {
                 <li>Drag players to their desired positions on the court</li>
                 <li>Click "Copy to Clipboard" above</li>
                 <li>Open src/data/rotations.ts in your editor</li>
-                <li>Find the rotation ({selectedRotation.name}) and arrangement ({selectedArrangement})</li>
+                <li>
+                  Find the rotation ({selectedRotation.name}) and arrangement ({selectedArrangement}
+                  )
+                </li>
                 <li>Replace the players array with the copied code</li>
                 <li>Save the file - changes will hot reload automatically</li>
               </ol>

@@ -14,8 +14,7 @@ export default function GlossaryPage() {
     const matchesSearch =
       term.term.toLowerCase().includes(searchQuery.toLowerCase()) ||
       term.definition.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory =
-      selectedCategory === 'all' || term.category === selectedCategory;
+    const matchesCategory = selectedCategory === 'all' || term.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
 

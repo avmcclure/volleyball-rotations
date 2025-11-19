@@ -7,7 +7,9 @@ interface CourtDiagramProps {
 
 export function CourtDiagram({ children, className = '' }: CourtDiagramProps) {
   return (
-    <div className={`relative w-full aspect-square bg-amber-100 border-4 border-white shadow-lg ${className}`}>
+    <div
+      className={`relative w-full aspect-square bg-amber-100 border-4 border-white shadow-lg ${className}`}
+    >
       {/* Court outline - only showing one half */}
       <div className="absolute inset-2 border-2 border-white border-t-0" />
 

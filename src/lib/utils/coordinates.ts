@@ -11,7 +11,7 @@ export function pixelsToPercentage(
 ): { x: number; y: number } {
   return {
     x: (x / containerWidth) * 100,
-    y: (y / containerHeight) * 100
+    y: (y / containerHeight) * 100,
   };
 }
 
@@ -26,21 +26,26 @@ export function percentageToPixels(
 ): { x: number; y: number } {
   return {
     x: (x / 100) * containerWidth,
-    y: (y / 100) * containerHeight
+    y: (y / 100) * containerHeight,
   };
 }
 
 /**
  * Gets zone boundaries as percentages
  */
-export function getZoneBoundaries(zone: Zone): { xMin: number; xMax: number; yMin: number; yMax: number } {
+export function getZoneBoundaries(zone: Zone): {
+  xMin: number;
+  xMax: number;
+  yMin: number;
+  yMax: number;
+} {
   const boundaries = {
     [Zone.I]: { xMin: 66, xMax: 100, yMin: 50, yMax: 100 },
     [Zone.II]: { xMin: 66, xMax: 100, yMin: 0, yMax: 50 },
     [Zone.III]: { xMin: 33, xMax: 66, yMin: 0, yMax: 50 },
     [Zone.IV]: { xMin: 0, xMax: 33, yMin: 0, yMax: 50 },
     [Zone.V]: { xMin: 0, xMax: 33, yMin: 50, yMax: 100 },
-    [Zone.VI]: { xMin: 33, xMax: 66, yMin: 50, yMax: 100 }
+    [Zone.VI]: { xMin: 33, xMax: 66, yMin: 50, yMax: 100 },
   };
 
   return boundaries[zone];
@@ -70,13 +75,9 @@ export function getZoneFromCoordinates(x: number, y: number): Zone {
 /**
  * Snaps a coordinate to the nearest grid position
  */
-export function snapToGrid(
-  x: number,
-  y: number,
-  gridSize: number = 10
-): { x: number; y: number } {
+export function snapToGrid(x: number, y: number, gridSize: number = 10): { x: number; y: number } {
   return {
     x: Math.round(x / gridSize) * gridSize,
-    y: Math.round(y / gridSize) * gridSize
+    y: Math.round(y / gridSize) * gridSize,
   };
 }

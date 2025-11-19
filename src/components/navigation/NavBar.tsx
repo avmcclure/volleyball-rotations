@@ -64,12 +64,7 @@ export function NavBar() {
             className="md:hidden p-2 rounded-md hover:bg-blue-500 transition-colors"
             aria-label="Toggle menu"
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isMenuOpen ? (
                 <path
                   strokeLinecap="round"

@@ -2,12 +2,12 @@
  * Court zones using Roman numeral notation
  */
 export enum Zone {
-  I = 'I',     // Right back
-  II = 'II',   // Right front
+  I = 'I', // Right back
+  II = 'II', // Right front
   III = 'III', // Middle front
-  IV = 'IV',   // Left front
-  V = 'V',     // Left back
-  VI = 'VI',   // Middle back
+  IV = 'IV', // Left front
+  V = 'V', // Left back
+  VI = 'VI', // Middle back
 }
 
 /**
@@ -53,9 +53,9 @@ export interface CourtPosition {
  * Individual player instance in an arrangement
  */
 export interface Player {
-  id: string;           // Unique identifier (e.g., "S1", "O1", "M1")
-  position: Position;   // Player's role
-  color: string;        // Hex color for visual distinction
+  id: string; // Unique identifier (e.g., "S1", "O1", "M1")
+  position: Position; // Player's role
+  color: string; // Hex color for visual distinction
   coordinates: CourtPosition; // Exact position on court (includes zone)
 }
 
@@ -89,20 +89,20 @@ export interface ArrangementConfig {
  * Complete rotation configuration
  */
 export interface Rotation {
-  id: number;              // 1-6
-  system: RotationSystem;  // 5-1 or 6-2
-  name: string;            // "Rotation 1"
-  description: string;     // Overview of this rotation
+  id: number; // 1-6
+  system: RotationSystem; // 5-1 or 6-2
+  name: string; // "Rotation 1"
+  description: string; // Overview of this rotation
   arrangements: {
     [Arrangement.HOME]: ArrangementConfig;
     [Arrangement.BASE]: ArrangementConfig;
     [Arrangement.SERVE]: ArrangementConfig;
     [Arrangement.RECEIVE]: ArrangementConfig;
   };
-  serverZone: Zone;        // Which zone is serving
-  setterZone: Zone;        // Which zone setter is in (for 5-1)
-  frontRow: Position[];    // Which positions are in front row
-  backRow: Position[];     // Which positions are in back row
+  serverZone: Zone; // Which zone is serving
+  setterZone: Zone; // Which zone setter is in (for 5-1)
+  frontRow: Position[]; // Which positions are in front row
+  backRow: Position[]; // Which positions are in back row
 }
 
 /**

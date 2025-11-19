@@ -59,24 +59,15 @@ export default function PracticePage() {
               <Card className="h-full hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex items-center justify-between">
-                    <h3 className="text-xl font-bold text-gray-900">
-                      {rotation.name}
-                    </h3>
-                    <span className="text-sm text-gray-500">
-                      {rotation.system}
-                    </span>
+                    <h3 className="text-xl font-bold text-gray-900">{rotation.name}</h3>
+                    <span className="text-sm text-gray-500">{rotation.system}</span>
                   </div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 mb-4">{rotation.description}</p>
                   <div className="flex items-center gap-2 text-sm text-blue-600 font-medium">
                     <span>Start Practice</span>
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"

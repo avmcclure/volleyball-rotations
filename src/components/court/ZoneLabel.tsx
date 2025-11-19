@@ -12,7 +12,7 @@ export function ZoneLabel({ zone, position }: ZoneLabelProps) {
       className="absolute transform -translate-x-1/2 -translate-y-1/2 text-gray-400 font-bold text-sm pointer-events-none select-none"
       style={{
         left: `${position.x}%`,
-        top: `${position.y}%`
+        top: `${position.y}%`,
       }}
     >
       {zone}

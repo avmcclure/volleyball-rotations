@@ -57,7 +57,7 @@ export default function PracticeRotationClient({ rotationId }: PracticeRotationC
       playerPlacements: placedPlayers,
       isComplete: true,
       correctCount: 0,
-      hintsUsed
+      hintsUsed,
     };
 
     const results = validateAllPlacements(session, rotation);
@@ -72,7 +72,7 @@ export default function PracticeRotationClient({ rotationId }: PracticeRotationC
       playerPlacements: placedPlayers,
       isComplete: false,
       correctCount: 0,
-      hintsUsed
+      hintsUsed,
     };
 
     const hintPlayer = getHint(session, rotation);

@@ -9,12 +9,7 @@ interface CourtGridProps {
 }
 
 export function CourtGrid({ rotation, onPlayerClick }: CourtGridProps) {
-  const arrangements = [
-    Arrangement.HOME,
-    Arrangement.BASE,
-    Arrangement.SERVE,
-    Arrangement.RECEIVE
-  ];
+  const arrangements = [Arrangement.HOME, Arrangement.BASE, Arrangement.SERVE, Arrangement.RECEIVE];
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

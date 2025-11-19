@@ -18,8 +18,8 @@ export default function BasicsPage() {
         </CardHeader>
         <CardContent>
           <p className="text-gray-700 mb-4">
-            The goal of running rotations is to maximize our ability to have an attack against
-            the other team by having players who play dedicated roles (positions) set up in an
+            The goal of running rotations is to maximize our ability to have an attack against the
+            other team by having players who play dedicated roles (positions) set up in an
             arrangement that they can most effectively fill those roles.
           </p>
         </CardContent>
@@ -78,9 +78,7 @@ export default function BasicsPage() {
             </div>
             <div>
               <h3 className="font-semibold text-gray-900">4. Base (Defense)</h3>
-              <p className="text-gray-600">
-                Where you play defense. Standard defensive positions.
-              </p>
+              <p className="text-gray-600">Where you play defense. Standard defensive positions.</p>
             </div>
           </div>
         </CardContent>

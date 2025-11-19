@@ -23,7 +23,7 @@ export function PlayerToken({
   isHint,
   draggable = false,
   onDragStart,
-  onDragEnd
+  onDragEnd,
 }: PlayerTokenProps) {
   const positionInfo = getPositionInfo(player.position);
   const abbreviation = positionInfo?.abbreviation || '?';
@@ -47,7 +47,7 @@ export function PlayerToken({
       className={`absolute transform -translate-x-1/2 -translate-y-1/2 ${onClick || draggable ? 'cursor-pointer' : ''}`}
       style={{
         left: `${player.coordinates.x}%`,
-        top: `${player.coordinates.y}%`
+        top: `${player.coordinates.y}%`,
       }}
       onClick={onClick}
       draggable={draggable}
@@ -73,7 +73,12 @@ export function PlayerToken({
       {isIncorrect && (
         <div className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center">
           <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={3}
+              d="M6 18L18 6M6 6l12 12"
+            />
           </svg>
         </div>
       )}
