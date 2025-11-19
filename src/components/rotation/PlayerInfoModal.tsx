@@ -33,7 +33,7 @@ export function PlayerInfoModal({ isOpen, onClose, player, arrangement }: Player
             {positionInfo.abbreviation}
           </div>
           <div>
-            <p className="text-sm text-gray-600">Zone {player.zone}</p>
+            <p className="text-sm text-gray-600">Zone {player.coordinates.zone}</p>
             <p className="text-sm text-gray-600">{arrangement} Arrangement</p>
           </div>
         </div>

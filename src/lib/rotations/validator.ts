@@ -32,9 +32,9 @@ export function validatePlayerPlacement(
   return {
     playerId,
     isCorrect,
-    correctZone: correctPlayer.zone,
+    correctZone: correctPlayer.coordinates.zone,
     actualZone: actualPosition.zone,
-    message: isCorrect ? 'Correct!' : `Should be in ${correctPlayer.zone}`
+    message: isCorrect ? 'Correct!' : `Should be in ${correctPlayer.coordinates.zone}`
   };
 }
 
@@ -116,7 +116,7 @@ export function findClosestPosition(
 
   for (const player of players) {
     const distance = calculateDistance(
-      { x: clickPosition.x, y: clickPosition.y, zone: player.zone },
+      { x: clickPosition.x, y: clickPosition.y, zone: player.coordinates.zone },
       player.coordinates
     );
 

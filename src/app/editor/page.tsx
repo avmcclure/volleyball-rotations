@@ -55,7 +55,7 @@ export default function RotationEditorPage() {
 
     const code = sortedPlayers.map(player => {
       const pos = playerPositions.get(player.id) || player.coordinates;
-      return `          { id: '${player.id}', position: Position.${player.position.toUpperCase().replace(' ', '_')}, color: '${player.color}', zone: Zone.${pos.zone}, coordinates: { x: ${pos.x}, y: ${pos.y}, zone: Zone.${pos.zone} } }`;
+      return `          { id: '${player.id}', position: Position.${player.position.toUpperCase().replace(' ', '_')}, color: '${player.color}', coordinates: { x: ${pos.x}, y: ${pos.y}, zone: Zone.${pos.zone} } }`;
     }).join(',\n');
 
     return `        players: [\n${code}\n        ]`;

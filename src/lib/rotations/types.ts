@@ -56,8 +56,7 @@ export interface Player {
   id: string;           // Unique identifier (e.g., "S1", "O1", "M1")
   position: Position;   // Player's role
   color: string;        // Hex color for visual distinction
-  zone: Zone;          // Which zone they're in
-  coordinates: CourtPosition; // Exact position on court
+  coordinates: CourtPosition; // Exact position on court (includes zone)
 }
 
 /**
