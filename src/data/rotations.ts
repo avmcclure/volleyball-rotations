@@ -18,11 +18,11 @@ export const rotations: Rotation[] = [
         description: 'Starting positions based on service order',
         players: [
           { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.I, coordinates: { x: 83, y: 75, zone: Zone.I } },
-          { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.IV, coordinates: { x: 17, y: 25, zone: Zone.IV } },
-          { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.V, coordinates: { x: 17, y: 75, zone: Zone.V } },
+          { id: 'RS1', position: Position.OUTSIDE, color: '#FCD34D', zone: Zone.II, coordinates: { x: 83, y: 25, zone: Zone.II } },
           { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.III, coordinates: { x: 50, y: 25, zone: Zone.III } },
-          { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.VI, coordinates: { x: 50, y: 75, zone: Zone.VI } },
-          { id: 'RS1', position: Position.RIGHT_SIDE, color: '#FCD34D', zone: Zone.II, coordinates: { x: 83, y: 25, zone: Zone.II } }
+          { id: 'O1', position: Position.RIGHT_SIDE, color: '#4ADE80', zone: Zone.IV, coordinates: { x: 17, y: 25, zone: Zone.IV } },
+          { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.V, coordinates: { x: 17, y: 75, zone: Zone.V } },
+          { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.VI, coordinates: { x: 50, y: 75, zone: Zone.VI } }
         ]
       },
       [Arrangement.SERVE]: {
@@ -31,11 +31,11 @@ export const rotations: Rotation[] = [
         setupSteps: ['Move server back', 'Move middle to base', 'Set up front row to switch', 'Set up back row to switch'],
         players: [
           { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.I, coordinates: { x: 83, y: 95, zone: Zone.I } },
-          { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.IV, coordinates: { x: 25, y: 25, zone: Zone.IV } },
-          { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.V, coordinates: { x: 17, y: 85, zone: Zone.V } },
+          { id: 'RS1', position: Position.OUTSIDE, color: '#FCD34D', zone: Zone.II, coordinates: { x: 75, y: 25, zone: Zone.II } },
           { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.III, coordinates: { x: 50, y: 15, zone: Zone.III } },
-          { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.VI, coordinates: { x: 50, y: 70, zone: Zone.VI } },
-          { id: 'RS1', position: Position.RIGHT_SIDE, color: '#FCD34D', zone: Zone.II, coordinates: { x: 75, y: 25, zone: Zone.II } }
+          { id: 'O1', position: Position.RIGHT_SIDE, color: '#4ADE80', zone: Zone.IV, coordinates: { x: 25, y: 25, zone: Zone.IV } },
+          { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.V, coordinates: { x: 17, y: 85, zone: Zone.V } },
+          { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.VI, coordinates: { x: 50, y: 70, zone: Zone.VI } }
         ]
       },
       [Arrangement.RECEIVE]: {
@@ -44,11 +44,10 @@ export const rotations: Rotation[] = [
         setupSteps: ['Push setter up', 'Pull passer back', 'Shift back row passers'],
         players: [
           { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.I, coordinates: { x: 90, y: 20, zone: Zone.I } },
+          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.III, coordinates: { x: 50, y: 20, zone: Zone.III } },
           { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.IV, coordinates: { x: 17, y: 70, zone: Zone.IV } },
           { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.V, coordinates: { x: 40, y: 85, zone: Zone.V } },
-          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.III, coordinates: { x: 50, y: 20, zone: Zone.III } },
-          { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.VI, coordinates: { x: 70, y: 85, zone: Zone.VI } },
-          { id: 'RS1', position: Position.RIGHT_SIDE, color: '#FCD34D', zone: Zone.II, coordinates: { x: 83, y: 30, zone: Zone.II } }
+          { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.VI, coordinates: { x: 70, y: 85, zone: Zone.VI } }
         ]
       },
       [Arrangement.BASE]: {
@@ -56,11 +55,11 @@ export const rotations: Rotation[] = [
         description: 'Base defensive positions',
         players: [
           { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.I, coordinates: { x: 85, y: 50, zone: Zone.I } },
-          { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.IV, coordinates: { x: 75, y: 15, zone: Zone.IV } },
-          { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.V, coordinates: { x: 50, y: 75, zone: Zone.V } },
+          { id: 'RS1', position: Position.OUTSIDE, color: '#FCD34D', zone: Zone.II, coordinates: { x: 25, y: 15, zone: Zone.II } },
           { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.III, coordinates: { x: 50, y: 15, zone: Zone.III } },
-          { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.VI, coordinates: { x: 15, y: 50, zone: Zone.VI } },
-          { id: 'RS1', position: Position.RIGHT_SIDE, color: '#FCD34D', zone: Zone.II, coordinates: { x: 25, y: 15, zone: Zone.II } }
+          { id: 'O1', position: Position.RIGHT_SIDE, color: '#4ADE80', zone: Zone.IV, coordinates: { x: 75, y: 15, zone: Zone.IV } },
+          { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.V, coordinates: { x: 50, y: 75, zone: Zone.V } },
+          { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.VI, coordinates: { x: 15, y: 50, zone: Zone.VI } }
         ]
       }
     }
@@ -82,12 +81,12 @@ export const rotations: Rotation[] = [
         type: Arrangement.HOME,
         description: 'Starting positions based on service order',
         players: [
-          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.VI, coordinates: { x: 50, y: 75, zone: Zone.VI } },
+          { id: 'RS1', position: Position.RIGHT_SIDE, color: '#FCD34D', zone: Zone.I, coordinates: { x: 83, y: 75, zone: Zone.I } },
+          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.II, coordinates: { x: 83, y: 25, zone: Zone.II } },
           { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.III, coordinates: { x: 50, y: 25, zone: Zone.III } },
           { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.IV, coordinates: { x: 17, y: 25, zone: Zone.IV } },
-          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.II, coordinates: { x: 83, y: 25, zone: Zone.II } },
           { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.V, coordinates: { x: 17, y: 75, zone: Zone.V } },
-          { id: 'RS1', position: Position.RIGHT_SIDE, color: '#FCD34D', zone: Zone.I, coordinates: { x: 83, y: 75, zone: Zone.I } }
+          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.VI, coordinates: { x: 50, y: 75, zone: Zone.VI } }
         ]
       },
       [Arrangement.SERVE]: {
@@ -95,12 +94,11 @@ export const rotations: Rotation[] = [
         description: 'Positions when your team is serving',
         setupSteps: ['Move server back', 'Move middle to base', 'Set up front row to switch', 'Set up back row to switch'],
         players: [
-          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.VI, coordinates: { x: 83, y: 65, zone: Zone.VI } },
+          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.II, coordinates: { x: 75, y: 25, zone: Zone.II } },
           { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.III, coordinates: { x: 50, y: 25, zone: Zone.III } },
           { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.IV, coordinates: { x: 17, y: 15, zone: Zone.IV } },
-          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.II, coordinates: { x: 75, y: 25, zone: Zone.II } },
           { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.V, coordinates: { x: 17, y: 65, zone: Zone.V } },
-          { id: 'RS1', position: Position.RIGHT_SIDE, color: '#FCD34D', zone: Zone.I, coordinates: { x: 83, y: 95, zone: Zone.I } }
+          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.VI, coordinates: { x: 83, y: 65, zone: Zone.VI } }
         ]
       },
       [Arrangement.RECEIVE]: {
@@ -108,24 +106,22 @@ export const rotations: Rotation[] = [
         description: 'Positions when receiving serve',
         setupSteps: ['Push setter up', 'Pull passer back', 'Shift back row passers'],
         players: [
-          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.VI, coordinates: { x: 75, y: 25, zone: Zone.VI } },
+          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.II, coordinates: { x: 83, y: 25, zone: Zone.II } },
           { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.III, coordinates: { x: 90, y: 15, zone: Zone.III } },
           { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.IV, coordinates: { x: 40, y: 85, zone: Zone.IV } },
-          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.II, coordinates: { x: 83, y: 25, zone: Zone.II } },
           { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.V, coordinates: { x: 60, y: 85, zone: Zone.V } },
-          { id: 'RS1', position: Position.RIGHT_SIDE, color: '#FCD34D', zone: Zone.I, coordinates: { x: 80, y: 85, zone: Zone.I } }
+          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.VI, coordinates: { x: 75, y: 25, zone: Zone.VI } }
         ]
       },
       [Arrangement.BASE]: {
         type: Arrangement.BASE,
         description: 'Base defensive positions',
         players: [
-          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.VI, coordinates: { x: 85, y: 50, zone: Zone.VI } },
+          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.II, coordinates: { x: 75, y: 15, zone: Zone.II } },
           { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.III, coordinates: { x: 50, y: 15, zone: Zone.III } },
           { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.IV, coordinates: { x: 17, y: 15, zone: Zone.IV } },
-          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.II, coordinates: { x: 75, y: 15, zone: Zone.II } },
           { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.V, coordinates: { x: 15, y: 50, zone: Zone.V } },
-          { id: 'RS1', position: Position.RIGHT_SIDE, color: '#FCD34D', zone: Zone.I, coordinates: { x: 50, y: 75, zone: Zone.I } }
+          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.VI, coordinates: { x: 85, y: 50, zone: Zone.VI } }
         ]
       }
     }
@@ -147,12 +143,11 @@ export const rotations: Rotation[] = [
         type: Arrangement.HOME,
         description: 'Starting positions based on service order',
         players: [
-          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.V, coordinates: { x: 17, y: 75, zone: Zone.V } },
+          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.I, coordinates: { x: 83, y: 75, zone: Zone.I } },
           { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.II, coordinates: { x: 83, y: 25, zone: Zone.II } },
           { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.III, coordinates: { x: 50, y: 25, zone: Zone.III } },
-          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.I, coordinates: { x: 83, y: 75, zone: Zone.I } },
           { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.IV, coordinates: { x: 17, y: 25, zone: Zone.IV } },
-          { id: 'RS1', position: Position.RIGHT_SIDE, color: '#FCD34D', zone: Zone.VI, coordinates: { x: 50, y: 75, zone: Zone.VI } }
+          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.V, coordinates: { x: 17, y: 75, zone: Zone.V } }
         ]
       },
       [Arrangement.SERVE]: {
@@ -160,12 +155,11 @@ export const rotations: Rotation[] = [
         description: 'Positions when your team is serving',
         setupSteps: ['Move server back', 'Move middle to base', 'Set up front row to switch', 'Set up back row to switch'],
         players: [
-          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.V, coordinates: { x: 50, y: 65, zone: Zone.V } },
+          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.I, coordinates: { x: 83, y: 95, zone: Zone.I } },
           { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.II, coordinates: { x: 83, y: 25, zone: Zone.II } },
           { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.III, coordinates: { x: 50, y: 20, zone: Zone.III } },
-          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.I, coordinates: { x: 83, y: 95, zone: Zone.I } },
           { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.IV, coordinates: { x: 30, y: 25, zone: Zone.IV } },
-          { id: 'RS1', position: Position.RIGHT_SIDE, color: '#FCD34D', zone: Zone.VI, coordinates: { x: 50, y: 85, zone: Zone.VI } }
+          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.V, coordinates: { x: 50, y: 65, zone: Zone.V } }
         ]
       },
       [Arrangement.RECEIVE]: {
@@ -173,24 +167,22 @@ export const rotations: Rotation[] = [
         description: 'Positions when receiving serve',
         setupSteps: ['Push setter up', 'Pull passer back', 'Shift back row passers'],
         players: [
-          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.V, coordinates: { x: 75, y: 25, zone: Zone.V } },
+          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.I, coordinates: { x: 17, y: 15, zone: Zone.I } },
           { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.II, coordinates: { x: 90, y: 20, zone: Zone.II } },
           { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.III, coordinates: { x: 40, y: 85, zone: Zone.III } },
-          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.I, coordinates: { x: 17, y: 15, zone: Zone.I } },
           { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.IV, coordinates: { x: 70, y: 85, zone: Zone.IV } },
-          { id: 'RS1', position: Position.RIGHT_SIDE, color: '#FCD34D', zone: Zone.VI, coordinates: { x: 55, y: 85, zone: Zone.VI } }
+          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.V, coordinates: { x: 75, y: 25, zone: Zone.V } }
         ]
       },
       [Arrangement.BASE]: {
         type: Arrangement.BASE,
         description: 'Base defensive positions',
         players: [
-          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.V, coordinates: { x: 85, y: 50, zone: Zone.V } },
+          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.I, coordinates: { x: 15, y: 50, zone: Zone.I } },
           { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.II, coordinates: { x: 75, y: 15, zone: Zone.II } },
           { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.III, coordinates: { x: 17, y: 15, zone: Zone.III } },
-          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.I, coordinates: { x: 15, y: 50, zone: Zone.I } },
           { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.IV, coordinates: { x: 50, y: 15, zone: Zone.IV } },
-          { id: 'RS1', position: Position.RIGHT_SIDE, color: '#FCD34D', zone: Zone.VI, coordinates: { x: 50, y: 75, zone: Zone.VI } }
+          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.V, coordinates: { x: 85, y: 50, zone: Zone.V } }
         ]
       }
     }
@@ -212,12 +204,11 @@ export const rotations: Rotation[] = [
         type: Arrangement.HOME,
         description: 'Starting positions based on service order',
         players: [
-          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.IV, coordinates: { x: 17, y: 25, zone: Zone.IV } },
           { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.I, coordinates: { x: 83, y: 75, zone: Zone.I } },
           { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.II, coordinates: { x: 83, y: 25, zone: Zone.II } },
-          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.VI, coordinates: { x: 50, y: 75, zone: Zone.VI } },
           { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.III, coordinates: { x: 50, y: 25, zone: Zone.III } },
-          { id: 'RS1', position: Position.RIGHT_SIDE, color: '#FCD34D', zone: Zone.V, coordinates: { x: 17, y: 75, zone: Zone.V } }
+          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.IV, coordinates: { x: 17, y: 25, zone: Zone.IV } },
+          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.VI, coordinates: { x: 50, y: 75, zone: Zone.VI } }
         ]
       },
       [Arrangement.SERVE]: {
@@ -225,12 +216,11 @@ export const rotations: Rotation[] = [
         description: 'Positions when your team is serving',
         setupSteps: ['Move server back', 'Move middle to base', 'Set up front row to switch', 'Set up back row to switch'],
         players: [
-          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.IV, coordinates: { x: 60, y: 25, zone: Zone.IV } },
           { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.I, coordinates: { x: 50, y: 85, zone: Zone.I } },
           { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.II, coordinates: { x: 75, y: 25, zone: Zone.II } },
-          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.VI, coordinates: { x: 50, y: 70, zone: Zone.VI } },
           { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.III, coordinates: { x: 50, y: 15, zone: Zone.III } },
-          { id: 'RS1', position: Position.RIGHT_SIDE, color: '#FCD34D', zone: Zone.V, coordinates: { x: 17, y: 95, zone: Zone.V } }
+          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.IV, coordinates: { x: 60, y: 25, zone: Zone.IV } },
+          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.VI, coordinates: { x: 50, y: 70, zone: Zone.VI } }
         ]
       },
       [Arrangement.RECEIVE]: {
@@ -238,24 +228,22 @@ export const rotations: Rotation[] = [
         description: 'Positions when receiving serve',
         setupSteps: ['Push setter up', 'Pull passer back', 'Shift back row passers'],
         players: [
-          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.IV, coordinates: { x: 83, y: 15, zone: Zone.IV } },
           { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.I, coordinates: { x: 30, y: 85, zone: Zone.I } },
           { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.II, coordinates: { x: 75, y: 25, zone: Zone.II } },
-          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.VI, coordinates: { x: 50, y: 85, zone: Zone.VI } },
           { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.III, coordinates: { x: 50, y: 25, zone: Zone.III } },
-          { id: 'RS1', position: Position.RIGHT_SIDE, color: '#FCD34D', zone: Zone.V, coordinates: { x: 70, y: 85, zone: Zone.V } }
+          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.IV, coordinates: { x: 83, y: 15, zone: Zone.IV } },
+          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.VI, coordinates: { x: 50, y: 85, zone: Zone.VI } }
         ]
       },
       [Arrangement.BASE]: {
         type: Arrangement.BASE,
         description: 'Base defensive positions',
         players: [
-          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.IV, coordinates: { x: 85, y: 15, zone: Zone.IV } },
           { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.I, coordinates: { x: 50, y: 75, zone: Zone.I } },
           { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.II, coordinates: { x: 17, y: 15, zone: Zone.II } },
-          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.VI, coordinates: { x: 15, y: 50, zone: Zone.VI } },
           { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.III, coordinates: { x: 50, y: 15, zone: Zone.III } },
-          { id: 'RS1', position: Position.RIGHT_SIDE, color: '#FCD34D', zone: Zone.V, coordinates: { x: 85, y: 50, zone: Zone.V } }
+          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.IV, coordinates: { x: 85, y: 15, zone: Zone.IV } },
+          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.VI, coordinates: { x: 15, y: 50, zone: Zone.VI } }
         ]
       }
     }
@@ -277,12 +265,11 @@ export const rotations: Rotation[] = [
         type: Arrangement.HOME,
         description: 'Starting positions based on service order',
         players: [
-          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.III, coordinates: { x: 50, y: 25, zone: Zone.III } },
-          { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.VI, coordinates: { x: 50, y: 75, zone: Zone.VI } },
           { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.I, coordinates: { x: 83, y: 75, zone: Zone.I } },
-          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.V, coordinates: { x: 17, y: 75, zone: Zone.V } },
           { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.II, coordinates: { x: 83, y: 25, zone: Zone.II } },
-          { id: 'RS1', position: Position.RIGHT_SIDE, color: '#FCD34D', zone: Zone.IV, coordinates: { x: 17, y: 25, zone: Zone.IV } }
+          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.III, coordinates: { x: 50, y: 25, zone: Zone.III } },
+          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.V, coordinates: { x: 17, y: 75, zone: Zone.V } },
+          { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.VI, coordinates: { x: 50, y: 75, zone: Zone.VI } }
         ]
       },
       [Arrangement.SERVE]: {
@@ -290,12 +277,11 @@ export const rotations: Rotation[] = [
         description: 'Positions when your team is serving',
         setupSteps: ['Move server back', 'Move middle to base', 'Set up front row to switch', 'Set up back row to switch'],
         players: [
-          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.III, coordinates: { x: 60, y: 25, zone: Zone.III } },
-          { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.VI, coordinates: { x: 17, y: 25, zone: Zone.VI } },
           { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.I, coordinates: { x: 17, y: 65, zone: Zone.I } },
-          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.V, coordinates: { x: 17, y: 65, zone: Zone.V } },
           { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.II, coordinates: { x: 75, y: 25, zone: Zone.II } },
-          { id: 'RS1', position: Position.RIGHT_SIDE, color: '#FCD34D', zone: Zone.IV, coordinates: { x: 17, y: 95, zone: Zone.IV } }
+          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.III, coordinates: { x: 60, y: 25, zone: Zone.III } },
+          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.V, coordinates: { x: 17, y: 65, zone: Zone.V } },
+          { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.VI, coordinates: { x: 17, y: 25, zone: Zone.VI } }
         ]
       },
       [Arrangement.RECEIVE]: {
@@ -303,24 +289,22 @@ export const rotations: Rotation[] = [
         description: 'Positions when receiving serve',
         setupSteps: ['Push setter up', 'Pull passer back', 'Shift back row passers'],
         players: [
-          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.III, coordinates: { x: 85, y: 15, zone: Zone.III } },
-          { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.VI, coordinates: { x: 30, y: 85, zone: Zone.VI } },
           { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.I, coordinates: { x: 17, y: 25, zone: Zone.I } },
-          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.V, coordinates: { x: 35, y: 85, zone: Zone.V } },
           { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.II, coordinates: { x: 83, y: 25, zone: Zone.II } },
-          { id: 'RS1', position: Position.RIGHT_SIDE, color: '#FCD34D', zone: Zone.IV, coordinates: { x: 70, y: 85, zone: Zone.IV } }
+          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.III, coordinates: { x: 85, y: 15, zone: Zone.III } },
+          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.V, coordinates: { x: 35, y: 85, zone: Zone.V } },
+          { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.VI, coordinates: { x: 30, y: 85, zone: Zone.VI } }
         ]
       },
       [Arrangement.BASE]: {
         type: Arrangement.BASE,
         description: 'Base defensive positions',
         players: [
-          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.III, coordinates: { x: 85, y: 15, zone: Zone.III } },
-          { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.VI, coordinates: { x: 50, y: 75, zone: Zone.VI } },
           { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.I, coordinates: { x: 17, y: 15, zone: Zone.I } },
-          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.V, coordinates: { x: 15, y: 50, zone: Zone.V } },
           { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.II, coordinates: { x: 50, y: 15, zone: Zone.II } },
-          { id: 'RS1', position: Position.RIGHT_SIDE, color: '#FCD34D', zone: Zone.IV, coordinates: { x: 85, y: 50, zone: Zone.IV } }
+          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.III, coordinates: { x: 85, y: 15, zone: Zone.III } },
+          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.V, coordinates: { x: 15, y: 50, zone: Zone.V } },
+          { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.VI, coordinates: { x: 50, y: 75, zone: Zone.VI } }
         ]
       }
     }
@@ -342,12 +326,11 @@ export const rotations: Rotation[] = [
         type: Arrangement.HOME,
         description: 'Starting positions based on service order',
         players: [
-          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.II, coordinates: { x: 83, y: 25, zone: Zone.II } },
-          { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.V, coordinates: { x: 17, y: 75, zone: Zone.V } },
-          { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.VI, coordinates: { x: 50, y: 75, zone: Zone.VI } },
-          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.IV, coordinates: { x: 17, y: 25, zone: Zone.IV } },
           { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.I, coordinates: { x: 83, y: 75, zone: Zone.I } },
-          { id: 'RS1', position: Position.RIGHT_SIDE, color: '#FCD34D', zone: Zone.III, coordinates: { x: 50, y: 25, zone: Zone.III } }
+          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.II, coordinates: { x: 83, y: 25, zone: Zone.II } },
+          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.IV, coordinates: { x: 17, y: 25, zone: Zone.IV } },
+          { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.V, coordinates: { x: 17, y: 75, zone: Zone.V } },
+          { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.VI, coordinates: { x: 50, y: 75, zone: Zone.VI } }
         ]
       },
       [Arrangement.SERVE]: {
@@ -355,12 +338,11 @@ export const rotations: Rotation[] = [
         description: 'Positions when your team is serving',
         setupSteps: ['Move server back', 'Move middle to base', 'Set up front row to switch', 'Set up back row to switch'],
         players: [
-          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.II, coordinates: { x: 83, y: 15, zone: Zone.II } },
-          { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.V, coordinates: { x: 50, y: 65, zone: Zone.V } },
-          { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.VI, coordinates: { x: 50, y: 25, zone: Zone.VI } },
-          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.IV, coordinates: { x: 50, y: 15, zone: Zone.IV } },
           { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.I, coordinates: { x: 83, y: 95, zone: Zone.I } },
-          { id: 'RS1', position: Position.RIGHT_SIDE, color: '#FCD34D', zone: Zone.III, coordinates: { x: 17, y: 65, zone: Zone.III } }
+          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.II, coordinates: { x: 83, y: 15, zone: Zone.II } },
+          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.IV, coordinates: { x: 50, y: 15, zone: Zone.IV } },
+          { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.V, coordinates: { x: 50, y: 65, zone: Zone.V } },
+          { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.VI, coordinates: { x: 50, y: 25, zone: Zone.VI } }
         ]
       },
       [Arrangement.RECEIVE]: {
@@ -368,24 +350,22 @@ export const rotations: Rotation[] = [
         description: 'Positions when receiving serve',
         setupSteps: ['Push setter up', 'Pull passer back', 'Shift back row passers'],
         players: [
-          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.II, coordinates: { x: 90, y: 15, zone: Zone.II } },
-          { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.V, coordinates: { x: 30, y: 85, zone: Zone.V } },
-          { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.VI, coordinates: { x: 50, y: 85, zone: Zone.VI } },
-          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.IV, coordinates: { x: 17, y: 25, zone: Zone.IV } },
           { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.I, coordinates: { x: 70, y: 85, zone: Zone.I } },
-          { id: 'RS1', position: Position.RIGHT_SIDE, color: '#FCD34D', zone: Zone.III, coordinates: { x: 50, y: 25, zone: Zone.III } }
+          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.II, coordinates: { x: 90, y: 15, zone: Zone.II } },
+          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.IV, coordinates: { x: 17, y: 25, zone: Zone.IV } },
+          { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.V, coordinates: { x: 30, y: 85, zone: Zone.V } },
+          { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.VI, coordinates: { x: 50, y: 85, zone: Zone.VI } }
         ]
       },
       [Arrangement.BASE]: {
         type: Arrangement.BASE,
         description: 'Base defensive positions',
         players: [
-          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.II, coordinates: { x: 85, y: 15, zone: Zone.II } },
-          { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.V, coordinates: { x: 50, y: 75, zone: Zone.V } },
-          { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.VI, coordinates: { x: 17, y: 15, zone: Zone.VI } },
-          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.IV, coordinates: { x: 50, y: 15, zone: Zone.IV } },
           { id: 'M2', position: Position.MIDDLE, color: '#FB923C', zone: Zone.I, coordinates: { x: 15, y: 50, zone: Zone.I } },
-          { id: 'RS1', position: Position.RIGHT_SIDE, color: '#FCD34D', zone: Zone.III, coordinates: { x: 85, y: 50, zone: Zone.III } }
+          { id: 'S1', position: Position.SETTER, color: '#22D3EE', zone: Zone.II, coordinates: { x: 85, y: 15, zone: Zone.II } },
+          { id: 'M1', position: Position.MIDDLE, color: '#60A5FA', zone: Zone.IV, coordinates: { x: 50, y: 15, zone: Zone.IV } },
+          { id: 'O1', position: Position.OUTSIDE, color: '#4ADE80', zone: Zone.V, coordinates: { x: 50, y: 75, zone: Zone.V } },
+          { id: 'O2', position: Position.OUTSIDE, color: '#F87171', zone: Zone.VI, coordinates: { x: 17, y: 15, zone: Zone.VI } }
         ]
       }
     }
