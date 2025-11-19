@@ -21,7 +21,11 @@ export function PlayerBank({ availablePlayers, onDragStart }: PlayerBankProps) {
           <div
             key={player.id}
             draggable
-            onDragStart={() => onDragStart(player.id)}
+            onDragStart={(e) => {
+              e.dataTransfer.setData('playerId', player.id);
+              e.dataTransfer.effectAllowed = 'move';
+              onDragStart(player.id);
+            }}
             className="cursor-move hover:scale-110 transition-transform"
           >
             <div

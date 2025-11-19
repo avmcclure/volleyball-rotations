@@ -30,7 +30,10 @@ export function DragDropCourt({
     (e: React.DragEvent<HTMLDivElement>) => {
       e.preventDefault();
 
-      if (!draggedPlayer) return;
+      // Get player ID from dataTransfer (from PlayerBank) or state (from court)
+      const playerId = e.dataTransfer.getData('playerId') || draggedPlayer;
+
+      if (!playerId) return;
 
       const rect = e.currentTarget.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width) * 100;
@@ -38,7 +41,7 @@ export function DragDropCourt({
 
       const zone = getZoneFromCoordinates(x, y);
 
-      onPlayerPlaced(draggedPlayer, { x, y, zone });
+      onPlayerPlaced(playerId, { x, y, zone });
       setDraggedPlayer(null);
     },
     [draggedPlayer, onPlayerPlaced]
@@ -83,7 +86,11 @@ export function DragDropCourt({
               isIncorrect={validation && !validation.isCorrect}
               isHint={isHint}
               draggable={true}
-              onDragStart={() => setDraggedPlayer(playerId)}
+              onDragStart={(e) => {
+                e.dataTransfer.setData('playerId', playerId);
+                e.dataTransfer.effectAllowed = 'move';
+                setDraggedPlayer(playerId);
+              }}
             />
           );
         })}
