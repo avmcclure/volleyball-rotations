@@ -10,23 +10,36 @@ interface CourtDiagramProps {
 
 export function CourtDiagram({ children, showZoneLabels = true, className = '' }: CourtDiagramProps) {
   return (
-    <div className={`relative w-full aspect-square bg-gradient-to-b from-orange-50 to-orange-100 border-4 border-gray-800 rounded-lg ${className}`}>
-      {/* Net line */}
-      <div className="absolute top-1/2 left-0 right-0 h-1 bg-gray-800 transform -translate-y-1/2" />
+    <div className={`relative w-full aspect-[9/18] bg-amber-100 border-4 border-white shadow-lg ${className}`}>
+      {/* Court outline */}
+      <div className="absolute inset-2 border-2 border-white" />
 
-      {/* Vertical lines */}
-      <div className="absolute top-0 bottom-0 left-1/3 w-0.5 bg-gray-400" />
-      <div className="absolute top-0 bottom-0 left-2/3 w-0.5 bg-gray-400" />
+      {/* Center line (net) */}
+      <div className="absolute top-1/2 left-0 right-0 h-1 bg-gray-900 shadow-md transform -translate-y-1/2 z-10">
+        {/* Net posts */}
+        <div className="absolute -left-1 top-1/2 w-2 h-2 bg-gray-900 rounded-full transform -translate-y-1/2" />
+        <div className="absolute -right-1 top-1/2 w-2 h-2 bg-gray-900 rounded-full transform -translate-y-1/2" />
+      </div>
+
+      {/* Attack lines (3m lines) */}
+      <div className="absolute left-2 right-2 h-0.5 bg-white" style={{ top: '33.33%' }} />
+      <div className="absolute left-2 right-2 h-0.5 bg-white" style={{ top: '66.67%' }} />
+
+      {/* Side lines marking zones (subtle) */}
+      <div className="absolute top-2 bottom-2 left-1/3 w-px bg-white/30" />
+      <div className="absolute top-2 bottom-2 left-2/3 w-px bg-white/30" />
 
       {/* Zone labels */}
       {showZoneLabels && (
         <>
-          <ZoneLabel zone={Zone.IV} position={{ x: 17, y: 25 }} />
-          <ZoneLabel zone={Zone.III} position={{ x: 50, y: 25 }} />
-          <ZoneLabel zone={Zone.II} position={{ x: 83, y: 25 }} />
-          <ZoneLabel zone={Zone.V} position={{ x: 17, y: 75 }} />
-          <ZoneLabel zone={Zone.VI} position={{ x: 50, y: 75 }} />
-          <ZoneLabel zone={Zone.I} position={{ x: 83, y: 75 }} />
+          {/* Front row */}
+          <ZoneLabel zone={Zone.IV} position={{ x: 17, y: 20 }} />
+          <ZoneLabel zone={Zone.III} position={{ x: 50, y: 20 }} />
+          <ZoneLabel zone={Zone.II} position={{ x: 83, y: 20 }} />
+          {/* Back row */}
+          <ZoneLabel zone={Zone.V} position={{ x: 17, y: 80 }} />
+          <ZoneLabel zone={Zone.VI} position={{ x: 50, y: 80 }} />
+          <ZoneLabel zone={Zone.I} position={{ x: 83, y: 80 }} />
         </>
       )}
 
