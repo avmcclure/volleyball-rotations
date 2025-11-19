@@ -2,23 +2,25 @@
 
 import { useState, useEffect } from 'react';
 import { getAllRotations } from '@/data/rotations';
-import { Rotation, Arrangement, CourtPosition, Color } from '@/lib/rotations/types';
+import { Rotation, Arrangement, CourtPosition } from '@/lib/rotations/types';
 import { CourtDiagram } from '@/components/court/CourtDiagram';
 import { PlayerToken } from '@/components/court/PlayerToken';
 import { Button } from '@/components/ui/Button';
 import { getZoneFromCoordinates } from '@/lib/utils/coordinates';
 
-// Helper function to convert Color enum value to enum name
-const getColorEnumName = (colorValue: Color): string => {
-  const colorMap: Record<string, string> = {
-    [Color.CYAN]: 'Color.CYAN',
-    [Color.GREEN]: 'Color.GREEN',
-    [Color.BLUE]: 'Color.BLUE',
-    [Color.YELLOW]: 'Color.YELLOW',
-    [Color.RED]: 'Color.RED',
-    [Color.ORANGE]: 'Color.ORANGE',
+// Helper function to get factory function name for a player ID
+const getFactoryFunctionName = (playerId: string): string => {
+  const factoryMap: Record<string, string> = {
+    S: 'createS',
+    S1: 'createS1',
+    RS: 'createRS',
+    RS1: 'createRS1',
+    M1: 'createM1',
+    M2: 'createM2',
+    O1: 'createO1',
+    O2: 'createO2',
   };
-  return colorMap[colorValue] || colorValue;
+  return factoryMap[playerId] || 'createPlayer';
 };
 
 export default function RotationEditorPage() {
@@ -69,7 +71,8 @@ export default function RotationEditorPage() {
     const code = sortedPlayers
       .map((player) => {
         const pos = playerPositions.get(player.id) || player.coordinates;
-        return `          { id: '${player.id}', position: Position.${player.position.toUpperCase().replace(' ', '_')}, color: ${getColorEnumName(player.color)}, coordinates: { x: ${pos.x}, y: ${pos.y}, zone: Zone.${pos.zone} } }`;
+        const factoryFn = getFactoryFunctionName(player.id);
+        return `          ${factoryFn}({ x: ${pos.x}, y: ${pos.y}, zone: Zone.${pos.zone} })`;
       })
       .join(',\n');
 
