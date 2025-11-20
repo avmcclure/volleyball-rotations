@@ -38,9 +38,7 @@ export enum Position {
  */
 export enum PlayerId {
   S = 'S',
-  S1 = 'S1',
   RS = 'RS',
-  RS1 = 'RS1',
   M1 = 'M1',
   M2 = 'M2',
   O1 = 'O1',
@@ -116,7 +114,6 @@ export interface ArrangementConfig {
  */
 export interface Rotation {
   id: number; // 1-6
-  system: RotationSystem; // 5-1 or 6-2
   name: string; // "Rotation 1"
   description: string; // Overview of this rotation
   arrangements: {

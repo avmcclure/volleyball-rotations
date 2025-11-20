@@ -15,28 +15,11 @@ export function createS(coordinates: CourtPosition): Player {
   };
 }
 
-export function createS1(coordinates: CourtPosition): Player {
-  return {
-    id: PlayerId.S1,
-    position: Position.SETTER,
-    color: Color.CYAN,
-    coordinates,
-  };
-}
 
 // Right Side helpers
 export function createRS(coordinates: CourtPosition): Player {
   return {
     id: PlayerId.RS,
-    position: Position.RIGHT_SIDE,
-    color: Color.YELLOW,
-    coordinates,
-  };
-}
-
-export function createRS1(coordinates: CourtPosition): Player {
-  return {
-    id: PlayerId.RS1,
     position: Position.RIGHT_SIDE,
     color: Color.YELLOW,
     coordinates,

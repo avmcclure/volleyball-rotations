@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import { Card, CardHeader, CardContent } from '@/components/ui/Card';
-import { getAllRotations } from '@/data/rotations';
+import { getAllSystems } from '@/data/systems';
+import { PlayerId } from '@/lib/rotations/types';
 
 export default function LearnPage() {
-  const rotations = getAllRotations();
+  const rotations = getAllSystems();
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -59,7 +60,7 @@ export default function LearnPage() {
                     <p>
                       <strong>Setter:</strong> Zone {
                         Object.entries(rotation.playerZones).find(
-                          ([_, playerId]) => playerId === 'S' || playerId === 'S1'
+                          ([_, playerId]) => playerId === PlayerId.S
                         )?.[0]
                       }
                     </p>

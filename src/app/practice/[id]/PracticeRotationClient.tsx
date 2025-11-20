@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { getRotation } from '@/data/rotations';
+import { getRotation } from '@/data/systems';
 import { Arrangement, CourtPosition, PlayerId, ValidationResult } from '@/lib/rotations/types';
 import { DragDropCourt } from '@/components/practice/DragDropCourt';
 import { PlayerBank } from '@/components/practice/PlayerBank';

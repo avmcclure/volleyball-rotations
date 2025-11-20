@@ -39,7 +39,7 @@ export function RotationDisplay({ rotation }: RotationDisplayProps) {
           <span>
             Setter Zone: <strong>{
               Object.entries(rotation.playerZones).find(
-                ([_, playerId]) => playerId === PlayerId.S || playerId === PlayerId.S1
+                ([_, playerId]) => playerId === PlayerId.S
               )?.[0]
             }</strong>
           </span>

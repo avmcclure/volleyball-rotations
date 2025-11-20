@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { getRotation } from '@/data/rotations';
+import { getRotation } from '@/data/systems';
 import { RotationDisplay } from '@/components/rotation/RotationDisplay';
 import { RotationNav } from '@/components/navigation/RotationNav';
 import { Button } from '@/components/ui/Button';

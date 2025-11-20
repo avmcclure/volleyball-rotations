@@ -11,47 +11,55 @@ export function NavBar() {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <nav className="bg-blue-600 text-white shadow-lg">
+    <nav className="bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-600 text-white shadow-2xl sticky top-0 z-50 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-              <span className="text-blue-600 font-bold text-lg">V</span>
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-200">
+              <span className="text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 to-violet-600 font-bold text-xl">V</span>
             </div>
-            <span className="font-bold text-xl">Volleyball Rotations</span>
+            <span className="font-bold text-xl tracking-tight">Volleyball Rotations</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-2">
             <Link
               href="/learn"
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                isActive('/learn') ? 'bg-blue-700' : 'hover:bg-blue-500'
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                isActive('/learn')
+                  ? 'bg-white/20 shadow-lg'
+                  : 'hover:bg-white/10 hover:shadow-md'
               }`}
             >
               Learn
             </Link>
             <Link
               href="/practice"
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                isActive('/practice') ? 'bg-blue-700' : 'hover:bg-blue-500'
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                isActive('/practice')
+                  ? 'bg-white/20 shadow-lg'
+                  : 'hover:bg-white/10 hover:shadow-md'
               }`}
             >
               Practice
             </Link>
             <Link
               href="/learn/glossary"
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                isActive('/learn/glossary') ? 'bg-blue-700' : 'hover:bg-blue-500'
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                isActive('/learn/glossary')
+                  ? 'bg-white/20 shadow-lg'
+                  : 'hover:bg-white/10 hover:shadow-md'
               }`}
             >
               Glossary
             </Link>
             <Link
               href="/editor"
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors border border-white/30 ${
-                isActive('/editor') ? 'bg-blue-700' : 'hover:bg-blue-500'
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 border border-white/40 ${
+                isActive('/editor')
+                  ? 'bg-white/20 shadow-lg'
+                  : 'hover:bg-white/10 hover:shadow-md'
               }`}
             >
               Editor
@@ -61,7 +69,7 @@ export function NavBar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-md hover:bg-blue-500 transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-all duration-200"
             aria-label="Toggle menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -86,31 +94,31 @@ export function NavBar() {
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden pb-4 space-y-2">
+          <div className="md:hidden pb-4 space-y-2 animate-fadeIn">
             <Link
               href="/learn"
-              className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-500 transition-colors"
+              className="block px-4 py-2 rounded-lg text-base font-medium hover:bg-white/10 transition-all duration-200"
               onClick={() => setIsMenuOpen(false)}
             >
               Learn
             </Link>
             <Link
               href="/practice"
-              className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-500 transition-colors"
+              className="block px-4 py-2 rounded-lg text-base font-medium hover:bg-white/10 transition-all duration-200"
               onClick={() => setIsMenuOpen(false)}
             >
               Practice
             </Link>
             <Link
               href="/learn/glossary"
-              className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-500 transition-colors"
+              className="block px-4 py-2 rounded-lg text-base font-medium hover:bg-white/10 transition-all duration-200"
               onClick={() => setIsMenuOpen(false)}
             >
               Glossary
             </Link>
             <Link
               href="/editor"
-              className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-500 transition-colors border border-white/30"
+              className="block px-4 py-2 rounded-lg text-base font-medium hover:bg-white/10 transition-all duration-200 border border-white/40"
               onClick={() => setIsMenuOpen(false)}
             >
               Editor
