@@ -16,10 +16,6 @@ This folder contains the complete improvement plan for the volleyball rotations 
 ### 🔴 Critical Priority (Volleyball Accuracy)
 Located in: `critical/`
 
-- **[Group A: Rotation Data Verification & Fixes](critical/group-a-rotation-data.md)** (6 tasks)
-  - Fix incorrect/placeholder position data in Rotations 1-6
-  - **Status:** Assigned to Coach Ace for expert review
-
 - **[Group B: Core Concepts & Rules](critical/group-b-core-concepts.md)** (4 tasks)
   - Add overlap rules, attack line, front/back row restrictions, tactical reasoning
 
