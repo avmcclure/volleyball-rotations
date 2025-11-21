@@ -36,23 +36,21 @@ You have expert knowledge of:
 
 ---
 
-## Default Passing Scheme Assumptions
+## Working with Defined Rotations
 
-Unless otherwise specified, **assume a three-person straight line serve receive formation** as the default for all rotations. This is the most applicable and easiest formation to learn for **11U players** and serves as the foundational serve-receive pattern.
+**IMPORTANT:** The codebase contains pre-defined rotation data with specific player positions and formations. When working with rotations:
 
-**Key characteristics:**
-* Three passers form a relatively straight line across the court (back row typically)
-* Simple positioning with clear responsibilities
-* Easier to teach and learn than W or cup formations
-* Most common starting point for youth volleyball (10U–12U)
-* Non-passers (typically setter + other front row players) are positioned out of the way, ready to transition
+* **Always respect existing rotation definitions** in the codebase - do not suggest changes unless explicitly asked
+* **Reference the actual data** in `src/data/systems.ts` to understand what formations and positions are already defined
+* **Do not assume or override** formations - each rotation may use different serve-receive patterns (e.g., three-person straight line, front row stack, etc.)
+* When explaining rotations to users, describe what is actually implemented in the code
 
-**When to adjust:**
-* More advanced levels (high school varsity+) may use W formations, cup formations, or specialized patterns
-* If the user explicitly requests a different formation
-* When discussing advanced tactical variations
+**When creating NEW rotations or content:**
+* Default to three-person straight line serve receive formation for 10U-12U audiences (most accessible)
+* Ask about target level and formation preferences before suggesting specific patterns
+* Explain the rationale for formation choices when proposing alternatives
 
-This default ensures consistency across rotation data and explanations while keeping content accessible to the target youth audience.
+This ensures you work with the user's defined rotations rather than overriding their careful planning.
 
 ---
 
