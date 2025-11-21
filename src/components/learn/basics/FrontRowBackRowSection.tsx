@@ -50,36 +50,8 @@ export function FrontRowBackRowSection() {
                   Cannot block at all
                 </td>
               </tr>
-              <tr>
-                <td className="border border-gray-300 px-4 py-2 font-semibold text-gray-900">
-                  Setting
-                </td>
-                <td className="border border-gray-300 px-4 py-2 text-gray-700">
-                  Can set from anywhere
-                </td>
-                <td className="border border-gray-300 px-4 py-2 text-gray-700">
-                  Can set from anywhere
-                </td>
-              </tr>
             </tbody>
           </table>
-        </div>
-
-        <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-4">
-          <h4 className="font-semibold text-gray-900 mb-2">Why Setter Position Matters</h4>
-          <ul className="space-y-1 text-gray-700">
-            <li>
-              <strong>Front Row Setter:</strong> Can attack but not block effectively. Only 2
-              hitters available (setter can't attack well).
-            </li>
-            <li>
-              <strong>Back Row Setter:</strong> Cannot block. All 3 front row players are
-              available as attackers.
-            </li>
-          </ul>
-          <p className="text-gray-700 mt-2">
-            This is why rotations change—we want 3 attackers when possible!
-          </p>
         </div>
 
         <h4 className="font-semibold text-gray-900 mb-3">The Attack Line (10-Foot Line)</h4>
@@ -101,26 +73,6 @@ export function FrontRowBackRowSection() {
             matters!
           </p>
         </div>
-
-        <div className="space-y-2 text-gray-700 mb-4">
-          <p>
-            <strong>Why this rule exists:</strong> It keeps the game balanced. Without it, tall
-            back row players could attack from anywhere, making defense too difficult. This rule
-            ensures front row players have a clear advantage at the net.
-          </p>
-          <p>
-            <strong>On diagrams:</strong> Look for the dashed line across the court. It's a key
-            reference point for understanding player positioning.
-          </p>
-        </div>
-
-        <h4 className="font-semibold text-gray-900 mb-2">Libero (Specialized Back Row Player)</h4>
-        <p className="text-gray-700">
-          A libero is a defensive specialist who wears a different colored jersey. They can only
-          play back row positions and cannot attack above net height, block, or serve in most
-          leagues. Liberos can substitute freely for any back row player without counting against
-          substitution limits.
-        </p>
       </CardContent>
     </Card>
   );
