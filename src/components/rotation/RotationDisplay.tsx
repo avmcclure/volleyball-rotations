@@ -32,10 +32,10 @@ export function RotationDisplay({ rotation }: RotationDisplayProps) {
 
   return (
     <div>
-      <div className="mb-6">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">{rotation.name}</h1>
-        <p className="text-gray-600">{rotation.description}</p>
-        <div className="mt-2 flex gap-4 text-sm text-gray-600">
+      <div className="mb-4 sm:mb-6">
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">{rotation.name}</h1>
+        <p className="text-sm sm:text-base text-gray-600">{rotation.description}</p>
+        <div className="mt-2 flex gap-3 sm:gap-4 text-xs sm:text-sm text-gray-600">
           <span>
             Setter Zone: <strong>{
               Object.entries(rotation.playerZones).find(

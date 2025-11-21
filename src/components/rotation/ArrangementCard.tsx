@@ -18,8 +18,8 @@ export function ArrangementCard({ rotation, arrangement, onPlayerClick }: Arrang
   return (
     <Card>
       <CardHeader>
-        <h3 className="text-lg font-semibold text-gray-900">{arrangement}</h3>
-        <p className="text-sm text-gray-600 mt-1">{config.description}</p>
+        <h3 className="text-base sm:text-lg font-semibold text-gray-900">{arrangement}</h3>
+        <p className="text-xs sm:text-sm text-gray-600 mt-1">{config.description}</p>
       </CardHeader>
 
       <CardContent>
@@ -34,9 +34,9 @@ export function ArrangementCard({ rotation, arrangement, onPlayerClick }: Arrang
         </CourtDiagram>
 
         {config.setupSteps && config.setupSteps.length > 0 && (
-          <div className="mt-4">
-            <h4 className="text-sm font-semibold text-gray-700 mb-2">Setup Steps:</h4>
-            <ol className="list-decimal list-inside space-y-1 text-sm text-gray-600">
+          <div className="mt-3 sm:mt-4">
+            <h4 className="text-xs sm:text-sm font-semibold text-gray-700 mb-1.5 sm:mb-2">Setup Steps:</h4>
+            <ol className="list-decimal list-inside space-y-0.5 sm:space-y-1 text-xs sm:text-sm text-gray-600">
               {config.setupSteps.map((step, index) => (
                 <li key={index}>{step}</li>
               ))}

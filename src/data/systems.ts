@@ -43,7 +43,7 @@ export const systems: Partial<Record<RotationSystem, Rotation[]>> = {
           description: 'Positions when your team is serving',
           setupSteps: [
             'Move server back',
-            'Move middle to base',
+            'Move front row middle to base',
             'Set up front row to switch',
             'Set up back row to switch',
           ],
@@ -116,7 +116,7 @@ export const systems: Partial<Record<RotationSystem, Rotation[]>> = {
           description: 'Positions when your team is serving',
           setupSteps: [
             'Move server back',
-            'Move middle to base',
+            'Move front row middle to base',
             'Set up front row to switch',
             'Set up back row to switch',
           ],
@@ -189,7 +189,7 @@ export const systems: Partial<Record<RotationSystem, Rotation[]>> = {
           description: 'Positions when your team is serving',
           setupSteps: [
             'Move server back',
-            'Move middle to base',
+            'Move front row middle to base',
             'Set up front row to switch',
             'Set up back row to switch',
           ],
@@ -262,7 +262,7 @@ export const systems: Partial<Record<RotationSystem, Rotation[]>> = {
           description: 'Positions when your team is serving',
           setupSteps: [
             'Move server back',
-            'Move middle to base',
+            'Move front row middle to base',
             'Set up front row to switch',
             'Set up back row to switch',
           ],
@@ -335,7 +335,7 @@ export const systems: Partial<Record<RotationSystem, Rotation[]>> = {
           description: 'Positions when your team is serving',
           setupSteps: [
             'Move server back',
-            'Move middle to base',
+            'Move front row middle to base',
             'Set up front row to switch',
             'Set up back row to switch',
           ],
@@ -408,7 +408,7 @@ export const systems: Partial<Record<RotationSystem, Rotation[]>> = {
           description: 'Positions when your team is serving',
           setupSteps: [
             'Move server back',
-            'Move middle to base',
+            'Move front row middle to base',
             'Set up front row to switch',
             'Set up back row to switch',
           ],

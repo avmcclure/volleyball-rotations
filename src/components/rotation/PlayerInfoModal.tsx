@@ -39,8 +39,8 @@ export function PlayerInfoModal({ isOpen, onClose, player, arrangement, rotation
             {positionInfo.abbreviation}
           </div>
           <div>
-            <p className="text-sm text-gray-600">Zone {playerZone || 'Unknown'}</p>
-            <p className="text-sm text-gray-600">{arrangement} Arrangement</p>
+            <p className="text-sm text-gray-600">{rotation.name} {arrangement}</p>
+            <p className="text-sm text-gray-600">Home: Zone {playerZone || 'Unknown'}</p>
           </div>
         </div>
 

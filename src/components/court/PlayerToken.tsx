@@ -44,7 +44,7 @@ export function PlayerToken({
 
   return (
     <div
-      className={`absolute transform -translate-x-1/2 -translate-y-1/2 ${onClick || draggable ? 'cursor-pointer' : ''}`}
+      className={`absolute transform -translate-x-1/2 -translate-y-1/2 ${onClick || draggable ? 'cursor-pointer touch-manipulation' : ''}`}
       style={{
         left: `${player.coordinates.x}%`,
         top: `${player.coordinates.y}%`,
@@ -55,7 +55,7 @@ export function PlayerToken({
       onDragEnd={onDragEnd}
     >
       <div
-        className={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg border-2 ${borderColor} ${shadowClass} transition-all hover:scale-110`}
+        className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-white font-bold text-base sm:text-lg border-2 ${borderColor} ${shadowClass} transition-all hover:scale-110 active:scale-95`}
         style={{ backgroundColor: player.color }}
       >
         {abbreviation}
@@ -63,16 +63,16 @@ export function PlayerToken({
 
       {/* Checkmark or X indicator */}
       {isCorrect && (
-        <div className="absolute -top-1 -right-1 w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
-          <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="absolute -top-0.5 -right-0.5 sm:-top-1 sm:-right-1 w-4 h-4 sm:w-5 sm:h-5 bg-green-500 rounded-full flex items-center justify-center">
+          <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
           </svg>
         </div>
       )}
 
       {isIncorrect && (
-        <div className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center">
-          <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="absolute -top-0.5 -right-0.5 sm:-top-1 sm:-right-1 w-4 h-4 sm:w-5 sm:h-5 bg-red-500 rounded-full flex items-center justify-center">
+          <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
