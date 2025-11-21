@@ -92,7 +92,7 @@ Located in: `nice-to-have/`
 
 #### Critical Priority
 - [ ] Group A: Rotation Data (0/6 complete) - 🔵 Assigned to Coach Ace
-- [ ] Group B: Core Concepts (0/4 complete)
+- [x] Group B: Core Concepts (4/4 complete) - ✅ Complete
 - [ ] Group C: Terminology (0/3 complete)
 
 #### High Impact
@@ -154,5 +154,5 @@ Implementation details, file locations, dependencies
 
 ---
 
-**Last Updated:** 2025-11-20
+**Last Updated:** 2025-01-20
 **Evaluation By:** Coach Ace (Volleyball Expert) + Danny Designer (UX Expert)

@@ -14,7 +14,7 @@ The Basics page currently explains zones and arrangements well, but is missing c
 
 ## Tasks
 
-### B1: Add Overlap Rules Explanation
+### B1: Add Overlap Rules Explanation ✅
 
 **User Story:**
 As a **beginner volleyball player**,
@@ -22,17 +22,17 @@ I want to understand what an overlap is and how to avoid it,
 So that I don't cause a rotation violation during a match.
 
 **Acceptance Criteria:**
-- [ ] Define "overlap" in clear, beginner-friendly language
-- [ ] Explain the three overlap rules:
-  - [ ] Front row players must be in front of corresponding back row players
-  - [ ] Players must maintain left-to-right order within rows
-  - [ ] Rules only apply at the moment of serve contact
-- [ ] Include visual diagram showing:
-  - [ ] ✅ Legal positioning (no overlap)
-  - [ ] ❌ Illegal positioning (overlap examples)
-- [ ] Explain what happens when an overlap occurs (point + serve to opponent)
-- [ ] Add example: "Zone IV must be left of Zone III, and Zone II must be right of Zone III"
-- [ ] Clarify that after serve contact, players can move anywhere
+- [x] Define "overlap" in clear, beginner-friendly language
+- [x] Explain the three overlap rules:
+  - [x] Front row players must be in front of corresponding back row players
+  - [x] Players must maintain left-to-right order within rows
+  - [x] Rules only apply at the moment of serve contact
+- [x] Include visual diagram showing:
+  - [x] ✅ Legal positioning (no overlap)
+  - [x] ❌ Illegal positioning (overlap examples)
+- [x] Explain what happens when an overlap occurs (point + serve to opponent)
+- [x] Add example: "Zone IV must be left of Zone III, and Zone II must be right of Zone III"
+- [x] Clarify that after serve contact, players can move anywhere
 
 **Technical Notes:**
 - Add to: `src/app/learn/basics/page.tsx`
@@ -48,7 +48,7 @@ So that I don't cause a rotation violation during a match.
 
 ---
 
-### B2: Add Attack Line / 10-Foot Line Explanation
+### B2: Add Attack Line / 10-Foot Line Explanation ✅
 
 **User Story:**
 As a **beginner volleyball player**,
@@ -56,13 +56,13 @@ I want to understand what the attack line is and why it matters,
 So that I know the rules for back row attacking.
 
 **Acceptance Criteria:**
-- [ ] Define attack line (10-foot line / 3-meter line)
-- [ ] Explain visual appearance on court (dashed line parallel to net)
-- [ ] Explain the rule: back row players must jump from behind this line when attacking above net height
-- [ ] Clarify what "attacking" means in this context
-- [ ] Show diagram with attack line clearly marked
-- [ ] Explain why this rule exists (fairness/balance)
-- [ ] Note that back row players can land in front of the line (jump location matters)
+- [x] Define attack line (10-foot line / 3-meter line)
+- [x] Explain visual appearance on court (dashed line parallel to net)
+- [x] Explain the rule: back row players must jump from behind this line when attacking above net height
+- [x] Clarify what "attacking" means in this context
+- [x] Show diagram with attack line clearly marked
+- [x] Explain why this rule exists (fairness/balance)
+- [x] Note that back row players can land in front of the line (jump location matters)
 
 **Technical Notes:**
 - Add to: `src/app/learn/basics/page.tsx`
@@ -77,7 +77,7 @@ Consider adding the attack line to all court diagrams site-wide for reference
 
 ---
 
-### B3: Add Front Row vs Back Row Restrictions
+### B3: Add Front Row vs Back Row Restrictions ✅
 
 **User Story:**
 As a **volleyball learner**,
@@ -85,7 +85,7 @@ I want to understand the differences between front row and back row positions,
 So that I know what each position can and cannot do.
 
 **Acceptance Criteria:**
-- [ ] Create comparison table/section:
+- [x] Create comparison table/section:
 
 | Aspect | Front Row (II, III, IV) | Back Row (I, VI, V) |
 |--------|------------------------|---------------------|
@@ -94,11 +94,11 @@ So that I know what each position can and cannot do.
 | Setting | Can set from anywhere | Can set from anywhere |
 | Zones | Zones II, III, IV | Zones I, VI, V |
 
-- [ ] Explain why setter position (front vs back row) matters
-  - [ ] Front row setter = 2 attackers available
-  - [ ] Back row setter = 3 attackers available
-- [ ] Explain "libero" concept briefly (back row specialist)
-- [ ] Show visual highlighting front vs back row zones
+- [x] Explain why setter position (front vs back row) matters
+  - [x] Front row setter = 2 attackers available
+  - [x] Back row setter = 3 attackers available
+- [x] Explain "libero" concept briefly (back row specialist)
+- [x] Show visual highlighting front vs back row zones
 
 **Technical Notes:**
 - Add to: `src/app/learn/basics/page.tsx`
@@ -110,7 +110,7 @@ So that I know what each position can and cannot do.
 
 ---
 
-### B4: Explain Tactical Reasoning for Switching Positions
+### B4: Explain Tactical Reasoning for Switching Positions ✅
 
 **User Story:**
 As a **volleyball learner**,
@@ -118,23 +118,23 @@ I want to understand WHY players switch from HOME to other arrangements,
 So that rotations make strategic sense rather than seeming arbitrary.
 
 **Acceptance Criteria:**
-- [ ] Add "Why Do We Switch?" section to Basics page
-- [ ] Explain the core philosophy:
-  - [ ] Service order (HOME) is required by rules but not optimal for play
-  - [ ] We move to better positions as soon as the serve is contacted
-  - [ ] Goal: Get specialists into their best positions
-- [ ] Explain each arrangement's purpose:
-  - [ ] **SERVE:** Position for offensive transition after our serve
-  - [ ] **RECEIVE:** Optimize passing formation with best passers
-  - [ ] **BASE:** Defensive coverage based on opponent's attack
-- [ ] Give concrete examples:
-  - [ ] "Setter moves to front right to be close to target"
-  - [ ] "Front row middle moves to center for blocking"
-  - [ ] "Best passers form triangle for serve receive"
-- [ ] Tie back to "3 Main Goals" already mentioned:
-  - [ ] Have 3 primary passers ✓
-  - [ ] Get setter to the setter spot ✓
-  - [ ] Have front row middle hitting middle ✓
+- [x] Add "Why Do We Switch?" section to Basics page
+- [x] Explain the core philosophy:
+  - [x] Service order (HOME) is required by rules but not optimal for play
+  - [x] We move to better positions as soon as the serve is contacted
+  - [x] Goal: Get specialists into their best positions
+- [x] Explain each arrangement's purpose:
+  - [x] **SERVE:** Position for offensive transition after our serve
+  - [x] **RECEIVE:** Optimize passing formation with best passers
+  - [x] **BASE:** Defensive coverage based on opponent's attack
+- [x] Give concrete examples:
+  - [x] "Setter moves to front right to be close to target"
+  - [x] "Front row middle moves to center for blocking"
+  - [x] "Best passers form triangle for serve receive"
+- [x] Tie back to "3 Main Goals" already mentioned:
+  - [x] Have 3 primary passers ✓
+  - [x] Get setter to the setter spot ✓
+  - [x] Have front row middle hitting middle ✓
 
 **Technical Notes:**
 - Add to: `src/app/learn/basics/page.tsx`
@@ -153,12 +153,12 @@ Add side-by-side comparison showing HOME (suboptimal) vs RECEIVE (optimized) wit
 ## Testing Checklist
 
 After adding each concept:
-- [ ] Explanation is clear for 12U-JV level players
-- [ ] Diagrams/visuals support the text
-- [ ] Cross-references to glossary are added
-- [ ] Content flows logically within Basics page
-- [ ] Mobile formatting looks good
-- [ ] No jargon used without definition
+- [x] Explanation is clear for 12U-JV level players
+- [x] Diagrams/visuals support the text
+- [x] Cross-references to glossary are added
+- [x] Content flows logically within Basics page
+- [x] Mobile formatting looks good
+- [x] No jargon used without definition
 
 ---
 
@@ -181,4 +181,4 @@ These additions will:
 
 ---
 
-**Status:** ⬜ Not Started
+**Status:** ✅ Complete
