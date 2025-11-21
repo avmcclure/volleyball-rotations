@@ -5,7 +5,7 @@ Epic: Foundational Concepts
   rotations
 - As a beginner player, I want to see an interactive court diagram that shows all 6 zones (I-VI) with their numbering, so that I can understand court positions
 - As a beginner player, I want to understand what the 4 arrangements (Home, Base, Serve, Receive) mean with visual comparisons, so that I can grasp why players move between positions
-- As a beginner player, I want to learn the difference between 5-1 and 6-2 rotation systems with simple explanations, so that I can understand which system is being used
+- As a beginner player, I want to learn the difference between 5-1 and 6-2 offensive systems with simple explanations, so that I can understand which system is being used
 
 Epic: Rotation Walkthroughs
 - As a beginner player, I want to view a guided walkthrough of each rotation (1-6) with all 4 arrangements displayed side-by-side, so that I can see the complete picture
@@ -14,10 +14,10 @@ Epic: Rotation Walkthroughs
 - As a beginner player, I want step-by-step instructions for setting up serve receive (push setter up, pull passer back, shift passers), so that I can follow a process
 - As a beginner player, I want to understand the concept of "opposites" with visual highlighting, so that I can see which players are across from each other
 
-Epic: Rotation System Details
-- As a beginner player, I want to explore the 5-1 rotation system with explanations of why it's numbered based on setter position, so that I understand the naming convention
+Epic: Offensive System Details
+- As a beginner player, I want to explore the 5-1 offensive system with explanations of why it's numbered based on setter position, so that I understand the naming convention
 - As a beginner player, I want to learn the three main goals of the 5-1 system (3 passers, setter to spot, middle hits middle), so that I understand the strategy
-- As a beginner player, I want to learn the 6-2 rotation system with similar depth as the 5-1, so that I can compare different approaches
+- As a beginner player, I want to learn the 6-2 offensive system with similar depth as the 5-1, so that I can compare different approaches
 - As a beginner player, I want to see base defense positioning explained for each player type, so that I know where to be on defense
 
 

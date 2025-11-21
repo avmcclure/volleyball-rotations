@@ -1,6 +1,6 @@
 # Volleyball Rotations Learning App
 
-An interactive Next.js web application for teaching volleyball players the 5-1 rotation system. Features guided walkthroughs, visual diagrams, and interactive drag-and-drop practice quizzes.
+An interactive Next.js web application for teaching volleyball players the 5-1 offensive system. Features guided walkthroughs, visual diagrams, and interactive drag-and-drop practice quizzes.
 
 ## Features
 

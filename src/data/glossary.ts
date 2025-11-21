@@ -2,18 +2,18 @@ import { GlossaryTerm } from '@/lib/rotations/types';
 
 export const glossaryTerms: GlossaryTerm[] = [
   {
-    term: '5-1 Rotation',
+    term: '5-1 Offensive System',
     definition:
-      'An offensive system using 5 attackers and 1 setter. The same setter sets from all six rotations, providing consistency in tempo and decision-making. When the setter is front row, the team has 2 attackers; when back row, the team has 3 front row attackers. This is the most common system at higher competitive levels.',
+      'An offensive system using 5 attackers and 1 setter. The same setter sets from all six rotations, providing consistency in tempo and decision-making. When the setter is front row, the team has 2 attackers; when back row, the team has 3 front row attackers. This is the most common offensive system at higher competitive levels.',
     category: 'system',
-    relatedTerms: ['6-2 Rotation', 'Setter', 'Front Row', 'Back Row'],
+    relatedTerms: ['6-2 Offensive System', 'Setter', 'Front Row', 'Back Row'],
   },
   {
-    term: '6-2 Rotation',
+    term: '6-2 Offensive System',
     definition:
-      'An rotation system using 2 setters who are positioned opposite each other. The back row setter sets while the front row setter acts as a right side attacker. This gives the team 3 front row attackers at all times. Common at intermediate levels where having an extra attacker is more valuable than setter consistency.',
+      'An offensive system using 2 setters who are positioned opposite each other. The back row setter sets while the front row setter acts as a right side attacker. This gives the team 3 front row attackers at all times. Common at intermediate levels where having an extra attacker is more valuable than setter consistency.',
     category: 'system',
-    relatedTerms: ['5-1 Rotation', 'Setter', 'Opposite'],
+    relatedTerms: ['5-1 Offensive System', 'Setter', 'Opposite'],
   },
   {
     term: 'Zone',
@@ -41,12 +41,12 @@ export const glossaryTerms: GlossaryTerm[] = [
     definition:
       'The positions players move to immediately after your team serves. Players transition from home positions to optimize offensive setup. The setter moves toward the net (usually right front), passers spread to receive any return, and hitters position for attack approaches. This is also called "offensive transition."',
     category: 'arrangement',
-    relatedTerms: ['Receive Arrangement', 'Base Defense', 'Home Position'],
+    relatedTerms: ['Serve Receive', 'Base Defense', 'Home Position'],
   },
   {
-    term: 'Receive Arrangement',
+    term: 'Serve Receive',
     definition:
-      'The positions players take when receiving the opponent\'s serve. Typically features a 3-person passing formation (W-formation or cup formation) with best passers in zones V, VI, and I. The setter positions near the net to run the offense, while non-passers prepare to approach for attack. Also called "serve receive" or "reception."',
+      'The positions players take when receiving the opponent\'s serve. Typically features a 3-person passing formation (W-formation or cup formation) with best passers in zones V, VI, and I. The setter positions near the net to run the offense, while non-passers prepare to approach for attack. Also called "reception."',
     category: 'arrangement',
     relatedTerms: ['Serve Arrangement', 'Base Defense', 'Passing'],
   },
@@ -55,7 +55,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     definition:
       'The primary playmaker who delivers the second contact to set up attackers. Requires excellent ball control, court awareness, and decision-making. The setter calls plays, reads the defense, and distributes sets to create offensive opportunities. In a 5-1, one setter runs the entire offense; in a 6-2, the back row setter sets.',
     category: 'position',
-    relatedTerms: ['5-1 Rotation', '6-2 Rotation', 'Front Row', 'Back Row'],
+    relatedTerms: ['5-1 Offensive System', '6-2 Offensive System', 'Front Row', 'Back Row'],
   },
   {
     term: 'Outside Hitter',
@@ -83,7 +83,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     definition:
       'In a 5-1 system, the player positioned directly across from the setter (3 rotations apart). When the setter is in Zone I, the opposite is in Zone IV, etc. The opposite is typically the right side hitter who is in the front row when the setter is back row, making them the primary right side attacker. This positioning ensures balanced team distribution.',
     category: 'concept',
-    relatedTerms: ['5-1 Rotation', 'Right Side', 'Service Order'],
+    relatedTerms: ['5-1 Offensive System', 'Right Side', 'Service Order'],
   },
   {
     term: 'Rotation',

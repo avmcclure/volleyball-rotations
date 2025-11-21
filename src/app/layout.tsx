@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Volleyball Rotations - Learn 5-1 & 6-2 Systems',
   description:
-    'Interactive volleyball rotation learning app for teaching players 5-1 and 6-2 rotation systems with guided walkthroughs and practice quizzes.',
+    'Interactive volleyball rotation learning app for teaching players 5-1 and 6-2 offensive systems with guided walkthroughs and practice quizzes.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -47,14 +47,14 @@ export function PhilosophySection() {
             </span>
           </div>
           <div>
-            <span className="font-semibold text-gray-900">RECEIVE:</span>
+            <span className="font-semibold text-gray-900">SERVE RECEIVE:</span>
             <span className="text-gray-700">
               {' '}
               Optimize passing formation with your best passers in position to handle the serve.
             </span>
           </div>
           <div>
-            <span className="font-semibold text-gray-900">BASE:</span>
+            <span className="font-semibold text-gray-900">BASE DEFENSE:</span>
             <span className="text-gray-700">
               {' '}
               Defensive coverage positions based on where the opponent's attack is coming from.

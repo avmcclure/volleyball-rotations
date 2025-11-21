@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-A complete Next.js application for teaching volleyball players the 5-1 rotation system. The app includes guided walkthroughs, interactive court diagrams, and drag-and-drop practice quizzes.
+A complete Next.js application for teaching volleyball players the 5-1 offensive system. The app includes guided walkthroughs, interactive court diagrams, and drag-and-drop practice quizzes.
 
 ## What Was Built
 
@@ -152,7 +152,7 @@ npm start           # Start production server
 ## Features Not Yet Implemented (Phase 2)
 
 - Animated transitions between arrangements
-- 6-2 rotation system
+- 6-2 offensive system
 - Guided practice mode (step-by-step)
 - Scenario-based challenges
 - Rotation identification quizzes

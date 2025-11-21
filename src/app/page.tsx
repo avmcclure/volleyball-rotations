@@ -15,9 +15,12 @@ export default function HomePage() {
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-600 bg-clip-text text-transparent leading-tight px-2">
           Master Volleyball Rotations
         </h1>
-        <p className="text-base sm:text-lg lg:text-xl text-slate-600 mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed px-2">
-          Learn the 5-1 rotation system with interactive walkthroughs and practice quizzes. Perfect
-          for beginners learning court positioning and movement.
+        <p className="text-base sm:text-lg lg:text-xl text-slate-600 mb-4 sm:mb-6 max-w-3xl mx-auto leading-relaxed px-2">
+          Learn the 5-1 offensive system with interactive walkthroughs and practice quizzes.
+        </p>
+        <p className="text-sm sm:text-base text-slate-500 mb-8 sm:mb-10 max-w-2xl mx-auto px-2">
+          Designed for middle school to high school players (ages 12-18) learning court positioning
+          and rotational movement. Perfect for beginners and intermediate players.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -30,7 +30,7 @@ export function ArrangementsSection() {
             </p>
           </div>
           <div>
-            <h3 className="font-semibold text-gray-900">4. Base (Defense)</h3>
+            <h3 className="font-semibold text-gray-900">4. Base Defense</h3>
             <p className="text-gray-600">Where you play defense. Standard defensive positions.</p>
           </div>
         </div>

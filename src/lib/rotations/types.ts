@@ -50,13 +50,13 @@ export enum PlayerId {
  */
 export enum Arrangement {
   HOME = 'Home',
-  BASE = 'Base',
+  BASE = 'Base Defense',
   SERVE = 'Serve',
-  RECEIVE = 'Receive',
+  RECEIVE = 'Serve Receive',
 }
 
 /**
- * Rotation system type
+ * Offensive system type
  */
 export enum RotationSystem {
   FIVE_ONE = '5-1',
