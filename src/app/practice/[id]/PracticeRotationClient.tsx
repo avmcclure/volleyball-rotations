@@ -10,7 +10,6 @@ import { PlayerBank } from '@/components/practice/PlayerBank';
 import { FeedbackIndicator } from '@/components/practice/FeedbackIndicator';
 import { HintButton } from '@/components/practice/HintButton';
 import { Button } from '@/components/ui/Button';
-import { RotationNav } from '@/components/navigation/RotationNav';
 import { validateAllPlacements, getHint } from '@/lib/rotations/validator';
 
 interface PracticeRotationClientProps {
@@ -30,6 +29,9 @@ export default function PracticeRotationClient({ rotationId }: PracticeRotationC
   if (!rotation) {
     notFound();
   }
+
+  const prevRotation = rotationId > 1 ? rotationId - 1 : null;
+  const nextRotation = rotationId < 6 ? rotationId + 1 : null;
 
   const allPlayers = rotation.arrangements[selectedArrangement].players;
   const placedPlayerIds = Array.from(placedPlayers.keys());
@@ -114,12 +116,56 @@ export default function PracticeRotationClient({ rotationId }: PracticeRotationC
   const allCorrect = correctCount === allPlayers.length && isChecked;
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <RotationNav currentRotation={rotationId} basePath="/practice" />
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+      {/* Header with navigation */}
+      <div className="mb-6 sm:mb-8">
+        <div className="flex items-center justify-between mb-4">
+          <Link href="/practice">
+            <Button variant="outline" size="sm">
+              <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              All Rotations
+            </Button>
+          </Link>
 
-      <div className="mb-6">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">{rotation.name} - Practice</h1>
-        <p className="text-gray-600">{rotation.description}</p>
+          <div className="flex items-center gap-2 sm:gap-3">
+            {prevRotation && (
+              <Link href={`/practice/${prevRotation}`}>
+                <Button variant="outline" size="sm">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </Button>
+              </Link>
+            )}
+
+            <span className="text-sm font-medium text-gray-600">
+              {rotationId} / 6
+            </span>
+
+            {nextRotation && (
+              <Link href={`/practice/${nextRotation}`}>
+                <Button variant="outline" size="sm">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Button>
+              </Link>
+            )}
+
+            <Link href={`/learn/${rotationId}`}>
+              <Button variant="outline" size="sm">
+                Review
+              </Button>
+            </Link>
+          </div>
+        </div>
+
+        <div>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">{rotation.name} - Practice</h1>
+          <p className="text-sm sm:text-base text-gray-600">{rotation.description}</p>
+        </div>
       </div>
 
       {/* Arrangement Selector */}

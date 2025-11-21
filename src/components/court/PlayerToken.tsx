@@ -12,6 +12,7 @@ interface PlayerTokenProps {
   draggable?: boolean;
   onDragStart?: (e: React.DragEvent) => void;
   onDragEnd?: (e: React.DragEvent) => void;
+  animated?: boolean;
 }
 
 export function PlayerToken({
@@ -23,6 +24,7 @@ export function PlayerToken({
   draggable = false,
   onDragStart,
   onDragEnd,
+  animated = false,
 }: PlayerTokenProps) {
 
   let borderColor = 'border-gray-700';
@@ -41,7 +43,9 @@ export function PlayerToken({
 
   return (
     <div
-      className={`absolute transform -translate-x-1/2 -translate-y-1/2 ${onClick || draggable ? 'cursor-pointer touch-manipulation' : ''}`}
+      className={`absolute transform -translate-x-1/2 -translate-y-1/2 ${onClick || draggable ? 'cursor-pointer touch-manipulation' : ''} ${
+        animated ? 'transition-all duration-[1500ms] ease-in-out' : ''
+      }`}
       style={{
         left: `${player.coordinates.x}%`,
         top: `${player.coordinates.y}%`,

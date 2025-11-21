@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
-import { Rotation, Arrangement } from '@/lib/rotations/types';
+import React, { useState, useEffect } from 'react';
+import { Rotation, Arrangement, Player } from '@/lib/rotations/types';
 import { CourtDiagram } from '../court/CourtDiagram';
 import { PlayerToken } from '../court/PlayerToken';
 import { Card, CardHeader, CardContent } from '../ui/Card';
@@ -10,10 +10,38 @@ interface ArrangementCardProps {
   rotation: Rotation;
   arrangement: Arrangement;
   onPlayerClick?: (playerId: string, arrangement: Arrangement) => void;
+  fromArrangement?: Arrangement | null;
+  isTransitioning?: boolean;
 }
 
-export function ArrangementCard({ rotation, arrangement, onPlayerClick }: ArrangementCardProps) {
+export function ArrangementCard({
+  rotation,
+  arrangement,
+  onPlayerClick,
+  fromArrangement,
+  isTransitioning = false,
+}: ArrangementCardProps) {
   const config = rotation.arrangements[arrangement];
+  const [animatedPlayers, setAnimatedPlayers] = useState(config.players);
+
+  // Handle animation when transitioning
+  useEffect(() => {
+    if (isTransitioning && fromArrangement) {
+      const fromConfig = rotation.arrangements[fromArrangement];
+      // Start with from positions
+      setAnimatedPlayers(fromConfig.players);
+
+      // Trigger transition to target positions after a brief delay
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setAnimatedPlayers(config.players);
+        });
+      });
+    } else {
+      // Not transitioning, show current positions
+      setAnimatedPlayers(config.players);
+    }
+  }, [arrangement, fromArrangement, isTransitioning, config.players, rotation.arrangements]);
 
   return (
     <Card>
@@ -23,15 +51,18 @@ export function ArrangementCard({ rotation, arrangement, onPlayerClick }: Arrang
       </CardHeader>
 
       <CardContent>
-        <CourtDiagram>
-          {config.players.map((player) => (
-            <PlayerToken
-              key={player.id}
-              player={player}
-              onClick={onPlayerClick ? () => onPlayerClick(player.id, arrangement) : undefined}
-            />
-          ))}
-        </CourtDiagram>
+        <div className="max-h-[60vh]">
+          <CourtDiagram>
+            {animatedPlayers.map((player) => (
+              <PlayerToken
+                key={player.id}
+                player={player}
+                onClick={onPlayerClick ? () => onPlayerClick(player.id, arrangement) : undefined}
+                animated={isTransitioning}
+              />
+            ))}
+          </CourtDiagram>
+        </div>
 
         {config.setupSteps && config.setupSteps.length > 0 && (
           <div className="mt-3 sm:mt-4">

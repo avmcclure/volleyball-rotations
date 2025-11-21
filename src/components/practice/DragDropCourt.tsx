@@ -65,7 +65,7 @@ export function DragDropCourt({
   };
 
   return (
-    <div className="relative" onDrop={handleDrop} onDragOver={handleDragOver}>
+    <div className="relative max-h-[60vh]" onDrop={handleDrop} onDragOver={handleDragOver}>
       <CourtDiagram>
         {Array.from(placedPlayers.entries()).map(([playerId, position]) => {
           const correctPlayer = rotation.arrangements[arrangement].players.find(

@@ -152,6 +152,7 @@ export default function RotationEditorPage() {
                 <option value={Arrangement.SERVE}>Serve</option>
                 <option value={Arrangement.RECEIVE}>Receive</option>
                 <option value={Arrangement.BASE}>Base</option>
+                <option value={Arrangement.FREEBALL}>Free Ball</option>
               </select>
             </div>
           </div>
