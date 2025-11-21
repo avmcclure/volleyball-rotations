@@ -25,6 +25,11 @@ export const positionInfo: PositionInfo[] = [
         'Cover tips and off-speed shots',
         'Transition to setting position on dig',
       ],
+      [Arrangement.FREEBALL]: [
+        'Move to setting position at net',
+        'Prepare to set to multiple attacking options',
+        'Communicate with hitters on available plays',
+      ],
     },
   },
   {
@@ -47,6 +52,11 @@ export const positionInfo: PositionInfo[] = [
         'Front row: Left front defense and attack',
         'Back row: Middle back defense, cover deep shots',
       ],
+      [Arrangement.FREEBALL]: [
+        'Front row: Approach for left side attack',
+        'Back row: May pass or position for back row attack',
+        'Read free ball trajectory and communicate',
+      ],
     },
   },
   {
@@ -68,6 +78,11 @@ export const positionInfo: PositionInfo[] = [
         'Front row: Middle block, read opposing setter',
         'Back row: Left back defense, dig line shots',
       ],
+      [Arrangement.FREEBALL]: [
+        'Front row: Approach for quick or slide attack',
+        'Back row: Usually does not pass, prepare to transition',
+        'Create attacking threat to spread defense',
+      ],
     },
   },
   {
@@ -88,6 +103,11 @@ export const positionInfo: PositionInfo[] = [
       [Arrangement.BASE]: [
         'Front row: Right side block and attack',
         'Back row: Right back defense',
+      ],
+      [Arrangement.FREEBALL]: [
+        'Front row: Approach for right side attack',
+        'Back row: May pass or prepare for back row attack',
+        'Be ready to set if setter takes first ball',
       ],
     },
   },

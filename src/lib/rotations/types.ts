@@ -38,6 +38,8 @@ export enum Position {
  */
 export enum PlayerId {
   S = 'S',
+  S1 = 'S1',
+  S2 = 'S2',
   RS = 'RS',
   M1 = 'M1',
   M2 = 'M2',
@@ -46,13 +48,14 @@ export enum PlayerId {
 }
 
 /**
- * The 4 arrangements in a rotation
+ * The 5 arrangements in a rotation
  */
 export enum Arrangement {
   HOME = 'Home',
   BASE = 'Base Defense',
   SERVE = 'Serve',
   RECEIVE = 'Serve Receive',
+  FREEBALL = 'Free Ball',
 }
 
 /**
@@ -96,6 +99,7 @@ export interface PositionInfo {
     [Arrangement.SERVE]: string[];
     [Arrangement.RECEIVE]: string[];
     [Arrangement.BASE]: string[];
+    [Arrangement.FREEBALL]: string[];
   };
 }
 
@@ -121,6 +125,7 @@ export interface Rotation {
     [Arrangement.BASE]: ArrangementConfig;
     [Arrangement.SERVE]: ArrangementConfig;
     [Arrangement.RECEIVE]: ArrangementConfig;
+    [Arrangement.FREEBALL]: ArrangementConfig;
   };
   playerZones: Record<Zone, PlayerId>; // Player ID assigned to each zone
 }

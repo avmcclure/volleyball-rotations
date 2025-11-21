@@ -13,6 +13,8 @@ import { getZoneFromCoordinates } from '@/lib/utils/coordinates';
 const getFactoryFunctionName = (playerId: PlayerId): string => {
   const factoryMap: Record<PlayerId, string> = {
     [PlayerId.S]: 'createS',
+    [PlayerId.S1]: 'createS1',
+    [PlayerId.S2]: 'createS2',
     [PlayerId.RS]: 'createRS',
     [PlayerId.M1]: 'createM1',
     [PlayerId.M2]: 'createM2',
@@ -208,7 +210,7 @@ export default function RotationEditorPage() {
                       </div>
                       <span className="text-slate-900 font-semibold">{player.id}:</span>
                       <span className="text-slate-600 text-xs sm:text-sm">
-                        x: {pos.x}, y: {pos.y}, zone: {pos.zone}
+                        x: {pos.x}, y: {pos.y}
                       </span>
                     </div>
                   );

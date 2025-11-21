@@ -31,8 +31,8 @@ export function validatePlayerPlacement(
     return {
       playerId,
       isCorrect: false,
-      correctZone: (playerZone || actualPosition.zone || Zone.I) as Zone,
-      actualZone: (actualPosition.zone || Zone.I) as Zone,
+      correctZone: (playerZone || Zone.I) as Zone,
+      actualZone: (Zone.I) as Zone,
       message: 'Player not found in rotation',
     };
   }
