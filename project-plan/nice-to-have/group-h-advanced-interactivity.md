@@ -140,67 +140,6 @@ const generateQuestion = (rotation: Rotation): Question => {
 
 ---
 
-### H3: Add Timed Challenges (Speed Recognition)
-
-**User Story:**
-As a **competitive learner**,
-I want timed challenges to identify rotations quickly,
-So that I can improve my reaction time and game recognition skills.
-
-**Acceptance Criteria:**
-- [ ] Challenge modes:
-  - [ ] **Speed Round:** Identify 10 rotations as fast as possible
-  - [ ] **Beat the Clock:** 30 seconds, answer as many as you can
-  - [ ] **Lightning Round:** 5 seconds per question, no pause
-- [ ] Challenge flow:
-  - [ ] Countdown timer (3... 2... 1... GO!)
-  - [ ] Display court diagram
-  - [ ] Quick selection (large buttons, keyboard shortcuts)
-  - [ ] Time pressure feedback (timer turns red at <5 seconds)
-  - [ ] Skip option (costs points but saves time)
-- [ ] Scoring system:
-  - [ ] Base points for correct answer (100)
-  - [ ] Bonus for speed (faster = more bonus)
-  - [ ] Combo multiplier (streak of correct answers)
-  - [ ] Time penalties for incorrect answers (-10 seconds)
-- [ ] Leaderboard:
-  - [ ] Personal best scores
-  - [ ] Optional: Global leaderboard (requires backend)
-  - [ ] Track improvement over time
-- [ ] Game feel:
-  - [ ] Sound effects (correct/incorrect/combo)
-  - [ ] Visual feedback (flashes, particles)
-  - [ ] Encouraging messages ("Great!", "Perfect!", "On fire!")
-
-**Technical Notes:**
-- Use `setInterval` or `requestAnimationFrame` for timer
-- Keyboard shortcuts for quick answers (1-6 keys)
-- Store personal bests in localStorage
-- Consider game states: READY → COUNTDOWN → PLAYING → RESULTS
-- Optimize for performance (smooth 60fps even with animations)
-- Mobile: Large, easily tappable answer buttons
-
-**Estimated Effort:** Medium-Large (5-7 hours)
-
-**Scoring Formula:**
-```typescript
-const calculateScore = (
-  isCorrect: boolean,
-  timeElapsed: number,  // in seconds
-  streak: number
-): number => {
-  if (!isCorrect) return 0;
-
-  const basePoints = 100;
-  const speedBonus = Math.max(0, 50 - timeElapsed * 5);
-  const streakMultiplier = 1 + (streak * 0.1);
-
-  return Math.round((basePoints + speedBonus) * streakMultiplier);
-};
-```
-
----
-
 ### H4: Implement Practice Statistics Dashboard
 
 **User Story:**
@@ -287,15 +226,13 @@ interface PracticeStats {
 ## Implementation Strategy
 
 **Recommended Order:**
-1. H4 - Statistics dashboard (foundation for tracking)
+
+1. H1 - Drag-and-drop (most complex, standalone feature)
 2. H2 - Test yourself mode (builds on existing quiz infrastructure)
-3. H3 - Timed challenges (enhances H2)
-4. H1 - Drag-and-drop (most complex, standalone feature)
+
 
 **Dependencies:**
-- H4 requires quiz data from Group E (E4)
 - H2 builds on quiz components from Group E
-- H3 can reuse question generation from H2
 - H1 is independent
 
 ---

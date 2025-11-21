@@ -1,8 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Player, Position } from '@/lib/rotations/types';
-import { getPositionInfo } from '@/data/positions';
+import { Player } from '@/lib/rotations/types';
 
 interface PlayerTokenProps {
   player: Player;
@@ -25,8 +24,6 @@ export function PlayerToken({
   onDragStart,
   onDragEnd,
 }: PlayerTokenProps) {
-  const positionInfo = getPositionInfo(player.position);
-  const abbreviation = positionInfo?.abbreviation || '?';
 
   let borderColor = 'border-gray-700';
   let shadowClass = 'shadow-md';
@@ -55,10 +52,10 @@ export function PlayerToken({
       onDragEnd={onDragEnd}
     >
       <div
-        className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-white font-bold text-base sm:text-lg border-2 ${borderColor} ${shadowClass} transition-all hover:scale-110 active:scale-95`}
+        className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center text-white font-bold text-xs sm:text-sm border-2 ${borderColor} ${shadowClass} transition-all hover:scale-110 active:scale-95`}
         style={{ backgroundColor: player.color }}
       >
-        {abbreviation}
+        {player.id}
       </div>
 
       {/* Checkmark or X indicator */}
